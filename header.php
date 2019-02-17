@@ -10,7 +10,7 @@
 
 </head>
 
-<?php 
+<?php
 	if( is_front_page() ){
 		$bodyClass = array('my-body', 'front-page');
 	} else {
@@ -19,4 +19,4 @@
 ?>
 <body <?php body_class($bodyClass); ?>>
 	<div class="container">
-		
+		<h1>here</h1>
