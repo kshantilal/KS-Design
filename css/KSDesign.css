@@ -1,3 +1,17 @@
+
+/*======FOOTER======*/
 #footer{
-  background-color: #ce0058;
+  background-color: #191f2d;
+  color: #a8a8a8;
+  text-align: center;
+  height: 60px;
+  padding: 1.5rem;
+}
+#footer h3{
+    font-size: 10px;
+    -webkit-transition: 0.5s;
+}
+#footer h3:hover{
+    color: #ffffff;
+    -webkit-transition: color 1s, opacity 1.0s ease;
 }
