@@ -32,7 +32,6 @@ gulp.task('js', function () {
 
 gulp.task('run', gulp.series('sass', 'css', 'js'));
 
-
 gulp.task('watch', function () {
     gulp.watch('./assets/scss/*.scss', gulp.series('sass'));
     gulp.watch('./assets/css/*.css', gulp.series('css'));
