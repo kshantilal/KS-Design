@@ -8,6 +8,7 @@
         <title>KS Design</title>
         <link rel="shortcut icon" type="image/png" href=""/>
         <?php wp_head();?>
+        <script src="https://kit.fontawesome.com/edcfecaa0e.js" crossorigin="anonymous"></script>
     </head>
 <?php
 
@@ -20,7 +21,7 @@ if( is_front_page() ){
 }
 ?>
 <nav role="navigation" aria-label="Main Navigation">
-
+    
 </nav>
 <!-- Add nav here -->
 

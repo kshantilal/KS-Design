@@ -1,13 +1,79 @@
-$primary-color: #ce0058;
+$primary-color: #2E3644;
+$secondary-color: #191f2d;
+$body-color: #333333;
+$green: #8aeebc;
+$grey: #d1d2d4;
+$bold: Avenir Black, Helvetica, Arial Black, sans-serif;
+$light: Avenir Light, Helvetica, Arial, sans-serif;
+$big-text: 30px;
 
+
+
+// Global sƒFtyles
 html{
-    color: $primary-color;
+    box-sizing: border-box;
 }
 body{
-    font-size: 12px;
+    font-family: $light;
+    color: $body-color;
 }
-h1{
+h1, h2, h3, h4, h5, h6{
+    font-family: $bold;
     color: $primary-color;
-    font-size: 24px;
+}
 
+
+
+
+// Header
+#header-info{
+    margin-top: 20em;
+    text-align: center;
+    i{
+        color: $grey;
+        transition: 0.3s;
+    }
+    a{
+        :hover{
+            color: $green;
+            transition: 0.3s;
+        }
+    }
+}
+#header-name-title{
+    font-size: 24px;
+    font-family: $light;
+    color: $grey;
+}
+#header-job-title{
+    color: $grey;
+}
+#header-job-title-2{
+    color: $grey;
+    font-family: $light;
+}
+#header-bg{
+    background-image: url('../img/header-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+@media screen and (min-width: 768px){
+    #header-info{
+        margin-top: 20em;
+        text-align: left;
+    }
+    #header-name-title{
+        font-size: 30px;
+    }
+    #header-job-title{
+        font-size: 80px;
+    }
+    #header-job-title-2{
+        font-size: 60px;
+    }
 }

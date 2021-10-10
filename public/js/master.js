@@ -1,1 +1,0 @@
-jQuery(function(e){console.log("herthissse")});
