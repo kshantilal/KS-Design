@@ -10,6 +10,17 @@ h1, h2, h3, h4, h5, h6 {
   color: #2E3644;
 }
 
+nav {
+  background-color: #2E3644;
+}
+nav a {
+  color: #d1d2d4;
+}
+
+.navbar {
+  padding: 1.5em;
+}
+
 #header-bg {
   background-image: url("../img/header-background.jpg");
   background-size: cover;
@@ -50,6 +61,10 @@ h1, h2, h3, h4, h5, h6 {
 #header-bg #header-job-title-2 {
   color: #d1d2d4;
   font-family: Avenir Light, Helvetica, Arial, sans-serif;
+}
+
+img#logo {
+  width: 50px;
 }
 
 #about h1 {

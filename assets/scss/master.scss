@@ -26,7 +26,16 @@ h1, h2, h3, h4, h5, h6{
     font-family: $bold;
     color: $primary-color;
 }
-
+// Navigation
+nav{
+    background-color: $primary-color;
+    a{
+        color: $grey;
+    }
+}
+.navbar{
+    padding: 1.5em;
+}
 // Header
 #header-bg{
     background-image: url('../img/header-background.jpg');
@@ -69,7 +78,9 @@ h1, h2, h3, h4, h5, h6{
         font-family: $light;
     }
 }
-
+img#logo{
+    width: 50px;
+}
 // About
 #about{
     h1{
@@ -81,7 +92,6 @@ h1, h2, h3, h4, h5, h6{
         }
     }
 }
-
 @media screen and (min-width: 768px){
     #header-bg{
         #header-info{
