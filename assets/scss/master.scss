@@ -3,17 +3,22 @@ $secondary-color: #191f2d;
 $body-color: #333333;
 $green: #8aeebc;
 $grey: #d1d2d4;
+$white: #ffffff;
+$black: #000000;
 $bold: Avenir Black, Helvetica, Arial Black, sans-serif;
 $light: Avenir Light, Helvetica, Arial, sans-serif;
 $big-text: 30px;
 
 
 
-// Global sƒFtyles
-html{
-    box-sizing: border-box;
-}
+// Global styles
+
+// *{
+//     box-sizing: border-box;
+// }
 body{
+    width: 100%;
+    height: 100%;
     font-family: $light;
     color: $body-color;
 }
@@ -22,58 +27,75 @@ h1, h2, h3, h4, h5, h6{
     color: $primary-color;
 }
 
-
-
-
 // Header
-#header-info{
-    margin-top: 20em;
-    text-align: center;
-    i{
-        color: $grey;
-        transition: 0.3s;
-    }
-    a{
-        :hover{
-            color: $green;
-            transition: 0.3s;
-        }
-    }
-}
-#header-name-title{
-    font-size: 24px;
-    font-family: $light;
-    color: $grey;
-}
-#header-job-title{
-    color: $grey;
-}
-#header-job-title-2{
-    color: $grey;
-    font-family: $light;
-}
 #header-bg{
     background-image: url('../img/header-background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    width: 100%;;
     height: 100vh;
-    position: absolute;
+    position: relative;
     right: 0;
     left: 0;
     top: 0;
-}
-@media screen and (min-width: 768px){
+    .row{
+        margin: 0;
+    }
     #header-info{
-        margin-top: 20em;
-        text-align: left;
+        text-align: center;
+        a{
+            color: $grey;
+            :hover{
+                color: $green;
+                transition: 0.3s;
+            }
+        }
+        i{
+            color: $grey;
+            transition: 0.3s;
+            margin-right: 1em;
+        }
     }
     #header-name-title{
-        font-size: 30px;
+        font-size: 24px;
+        font-family: $light;
+        color: $grey;
     }
     #header-job-title{
-        font-size: 80px;
+        color: $grey;
     }
     #header-job-title-2{
-        font-size: 60px;
+        color: $grey;
+        font-family: $light;
     }
+}
+
+// About
+#about{
+    h1{
+        font-size: $big-text;
+    }
+    #profile-img{
+        img{
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: 768px){
+    #header-bg{
+        #header-info{
+            text-align: left;
+        }
+        #header-name-title{
+            font-size: 30px;
+        }
+        #header-job-title{
+            font-size: 80px;
+        }
+        #header-job-title-2{
+            font-size: 60px;
+        }
+    }
+
 }

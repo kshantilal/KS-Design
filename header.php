@@ -28,7 +28,7 @@ if( is_front_page() ){
 </header>
 <body>
     <main role="main">
-
+    
 
 <?php
 

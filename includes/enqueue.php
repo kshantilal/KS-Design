@@ -1,5 +1,6 @@
 <?php
 
+global $uri;
 function customScripts(){
 
     $uri = get_template_directory_uri();
