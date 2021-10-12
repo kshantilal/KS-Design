@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.6.0",
-    "jquery": "^3.6.0"
+    "jquery": "^3.6.0",
+    "rfs": "^9.0.6"
   }
 }

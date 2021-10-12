@@ -15,15 +15,21 @@
         </div>
     </div>
     <section id="about">    
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-sm-4">
+        <div class="container d-flex justify-content-center h-100">
+            <div class="row align-items-center flex-wrap w-100">
+                <div class="col-sm-12 col-md-4 mx-auto">
                     <div id="profile-img">
                         <img src="<?php echo get_template_directory_uri() . '/public/img/personal-photo.jpg'?>">
                     </div>
                 </div>
-                <div class="col-12 col-sm-8">
-                    <h1 class="">about.</h1>
+                <div class="col-sm-12 col-md-8">
+                    <div id="profile-content">
+                        <h1 class="">about.</h1>
+                        <p>I am a passionate Digital Designer with over 4 years of experience in a multitude of areas including front-end web development, digital design, content creation, and POS. Advanced HTML and CSS, JavaScript and jQuery, PHP and WordPress CMS development as well as Adobe Creative Suite, are some of the key areas I have technical design expertise.</p>
+                        <div class="text-center text-md-left">
+                            <a class="btn" href="">Download CV</a>
+                        </div>
+                    </div>
                 </div>
                     
             </div>

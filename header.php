@@ -27,8 +27,8 @@ if( is_front_page() ){
             <img id="logo" src="<?php echo get_template_directory_uri() . '/public/img/Design Logo.png'?>" alt="">
         </a>
         <div class="text-right">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
-                <span class="navbar-toggler-icon"></span>
+            <button id="nav-icon" class="custom-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+                <span class="navbar-toggler-icon"><i class="fas fa-hamburger fa-2x"></i></span>
             </button>
             <?php bootstrap_nav(); ?>
         </div>
