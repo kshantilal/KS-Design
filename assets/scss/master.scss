@@ -164,7 +164,7 @@ img#logo{
     }
 }
 #project-header-container{
-    height: 100vh;
+    margin-bottom: 5em;
     #project-text-container {
         padding-top: 13em;
         text-align: center;
@@ -183,6 +183,17 @@ img#logo{
         left: 0;
         top: 0;
         bottom: 0;
+    }
+}
+#key-responsibilities-container{
+    position: relative;
+    top: 0;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1em 0 1em;
+    video{
+        width: 100%;
     }
 }
 .featured-image-parent > *{
@@ -231,10 +242,26 @@ img#logo{
     .featured-image-parent > *{
         height: 70vh;
     }
+    #key-responsibilities-container {
+        max-width: 1280px;
+        top: 10em;
+        padding: 0 5em 0 5em;
+    }
+    #project-header-container{
+        height: 100vh;
+    }
 
 }
-@media screen and (min-width: 1280px){
+@media screen and (min-width: 1200px){
+    #key-responsibilities-container {
+    }
+}
+@media screen and (min-width: 1440px){
     .featured-image-parent > *{
         height: 80vh;
+    }
+    #key-responsibilities-container {
+        top: 25em;
+        max-width: 1500px;
     }
 }
