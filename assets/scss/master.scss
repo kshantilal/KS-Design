@@ -47,6 +47,9 @@ nav{
         color: $grey;
     }
 }
+#project-nav{
+    background-color: $primary-color;
+}
 .nav-background{
     transition: 0.5s;
     background-color: $primary-color;
@@ -160,6 +163,39 @@ img#logo{
         }
     }
 }
+#project-header-container{
+    height: 100vh;
+    #project-text-container {
+        padding-top: 13em;
+        text-align: center;
+        #header-cta{
+            margin-top: 5%; 
+        }
+        #project-title{
+            h1{
+                margin-bottom: 1em;
+            }
+        }
+    }
+    #featured-image-container{
+        position: relative;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+    }
+}
+.featured-image-parent > *{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 40vh;
+}
+
+#gutenburg-content {
+    position: relative;
+    top: 25em;
+}
 @media screen and (min-width: 768px){
     #header-bg{
         #header-info{
@@ -192,5 +228,13 @@ img#logo{
             text-align: left;
         }
     }
+    .featured-image-parent > *{
+        height: 70vh;
+    }
 
+}
+@media screen and (min-width: 1280px){
+    .featured-image-parent > *{
+        height: 80vh;
+    }
 }

@@ -4,6 +4,8 @@
 // Includes
 include( get_theme_file_path('/includes/enqueue.php') );
 
+// Ability to add featured image to posts
+add_theme_support( 'post-thumbnails' );
 
 // Hooks
 add_action('wp_enqueue_scripts', 'customScripts');

@@ -10,5 +10,6 @@ jQuery(function($){
         }else{
             $('nav').removeClass('nav-background')
         }
+        
     });
 });
