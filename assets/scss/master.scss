@@ -222,6 +222,15 @@ img#logo{
         width: 100%;
     }
 }
+#footer-container{
+    background-color: $primary-color;
+    color: $grey;
+    padding: 2em;
+    margin-top: 5em;
+    p{
+        margin-bottom: 0;
+    }
+}
 @media screen and (min-width: 768px){
     #header-bg{
         #header-info{

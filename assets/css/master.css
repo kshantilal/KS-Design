@@ -213,6 +213,16 @@ img#logo {
   width: 100%;
 }
 
+#footer-container {
+  background-color: #2E3644;
+  color: #d1d2d4;
+  padding: 2em;
+  margin-top: 5em;
+}
+#footer-container p {
+  margin-bottom: 0;
+}
+
 @media screen and (min-width: 768px) {
   #header-bg #header-info {
     text-align: left;
