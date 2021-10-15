@@ -25,12 +25,12 @@ This page renders out single blog posts
             <div id="featured-image" style="background-image: url('<?php echo $backgroundImg[0] ?>');"></div>
         </div>
     </section>
-    <section id="key-responsibilities-container">
+    <section id="key-responsibilities-container" class="content-container">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12 col-md-5">
                     <div id="key-responsibilities-text">
-                        <h2>Key Responsibilities</h2>
+                        <h2>Key responsibilities</h2>
                         <?php echo get_lzb_meta( 'key-responsibilities' ); ?>
                     </div>
                 </div>
@@ -42,7 +42,11 @@ This page renders out single blog posts
             </div>
         </div>
     </section>
-
-
-
+    <section id="gutenburg-content-container" class="content-container">
+        <div class="container-fluid">
+            <div class="row">
+                <?php the_content();?>
+            </div>
+        </div>
+    </section>
 <?php get_footer(); ?>

@@ -34,6 +34,7 @@
   "dependencies": {
     "bootstrap": "^4.6.0",
     "jquery": "^3.6.0",
-    "rfs": "^9.0.6"
+    "rfs": "^9.0.6",
+    "swiper": "^7.0.8"
   }
 }

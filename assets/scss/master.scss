@@ -186,15 +186,20 @@ img#logo{
     }
 }
 #key-responsibilities-container{
-    position: relative;
     top: 0;
+    video{
+        width: 100%;
+    }
+}
+.content-container{
+    position: relative;
     max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
     padding: 0 1em 0 1em;
-    video{
-        width: 100%;
-    }
+}
+#project-images-container{
+    top: 10em;
 }
 .featured-image-parent > *{
     background-size: cover;
@@ -203,9 +208,19 @@ img#logo{
     height: 40vh;
 }
 
-#gutenburg-content {
-    position: relative;
-    top: 25em;
+#gutenburg-content-container{
+    top: 10em;
+    .project-image{
+        img{
+            width: 100%;
+            border-radius: 5px;
+        }
+    }
+}
+#help-center-key-responsibility-image{
+    img{
+        width: 100%;
+    }
 }
 @media screen and (min-width: 768px){
     #header-bg{
@@ -243,18 +258,27 @@ img#logo{
         height: 70vh;
     }
     #key-responsibilities-container {
-        max-width: 1280px;
         top: 10em;
+    }
+    #project-images-container{
+        top: 20em;
+    }
+    .content-container{
+        max-width: 1280px;
         padding: 0 5em 0 5em;
     }
     #project-header-container{
         height: 100vh;
     }
+    #gutenburg-content-container{
+        top: 20em;
+    }
 
 }
+
+
 @media screen and (min-width: 1200px){
-    #key-responsibilities-container {
-    }
+
 }
 @media screen and (min-width: 1440px){
     .featured-image-parent > *{
@@ -262,6 +286,16 @@ img#logo{
     }
     #key-responsibilities-container {
         top: 25em;
+        margin-bottom: 5em;
+    }
+    #project-images-container{
+        top: 30em;
+    }
+    .content-container{
         max-width: 1500px;
     }
+    #gutenburg-content-container{
+        top: 30em;
+    }
+    
 }
