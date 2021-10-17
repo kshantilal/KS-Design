@@ -116,7 +116,60 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="controls text-center">
+
+                        <?php
+                        $all_categories = get_categories(array(
+                            'hide_empty' => true,
+                            'orderby' => 'id'
+                        ));
+
+                        ?>
+                        <div id="mixer-button-container">
+                        <?php foreach($all_categories as $category): ?>
+                                <button type="button" data-filter=".<?php echo $category->slug; ?>"><?php echo $category->name; ?></button>
+                        <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" id="mixer-cont">
+                 <!-- Iterate through each post -->
+                <?php while(have_posts()) : the_post(); ?>
+                <!-- Gets the URL of the custom image for the post -->
+                <?php 
+                    $id = get_the_ID();
+                    $banner_img = get_post_meta($id, 'post_banner_img', true);	
+                    $banner_img = explode(',', $banner_img);
+                ?>
+                <?php
+                $categories = get_the_category();
+                $slugs = wp_list_pluck($categories, 'slug');
+                $class_names = join(' ', $slugs);
+                ?>
+                    <div class="col-sm-12 col-md-6 mix<?php if ($class_names) { echo ' ' . $class_names;} ?> ">
+                        <div class="single-project">          
+                            <?php if( !empty($banner_img) ) :?>
+                                <?php foreach ( $banner_img as $attachment_id ) :?>
+                                    
+                                    <a href="<?php the_permalink(); ?>">
+                                    <img src="<?php echo wp_get_attachment_url( $attachment_id );?>" alt="">
+                                    
+                                    <!-- <?php the_post_thumbnail(); ?> -->
+                                    </a>
+                                <?php endforeach;?> 
+                            <?php endif; ?>
+                           
+                         </div>
+                    </div>
+                <?php endwhile; ?>
+            </div>
+
         </div>
     </section>
     </div>
 <?php get_footer(); ?>
+

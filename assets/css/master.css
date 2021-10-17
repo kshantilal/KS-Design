@@ -153,6 +153,30 @@ img#logo {
     font-size: 12.5rem;
   }
 }
+#projects .single-project img {
+  width: 100%;
+  border-radius: 10px;
+}
+#projects #mixer-button-container {
+  display: inline-block;
+  margin: 5em 0 5em 0;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 0px 10px 25px 10px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 10px 25px 10px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 10px 25px 10px rgba(0, 0, 0, 0.15);
+}
+#projects #mixer-button-container .mixitup-control-active {
+  border-bottom: 5px solid #8aeebc;
+  font-family: Avenir Black, Helvetica, Arial Black, sans-serif;
+}
+#projects #mixer-button-container button {
+  background: none;
+  border: 0;
+  font-family: Avenir Light, Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  margin: 15px;
+}
 
 #project-header-container {
   margin-bottom: 5em;
@@ -218,6 +242,8 @@ img#logo {
   color: #d1d2d4;
   padding: 2em;
   margin-top: 5em;
+  position: relative;
+  top: 25em;
 }
 #footer-container p {
   margin-bottom: 0;

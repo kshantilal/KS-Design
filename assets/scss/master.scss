@@ -154,12 +154,39 @@ img#logo{
         text-align: center;
     }
 }
-// projects
+
+// my work projects
 #projects{
     #my-work{
         h1{
             @include rfs(200px);
             text-align: center;
+        }
+    }
+    .single-project{
+        img{
+            width: 100%;
+            border-radius: 10px;
+        }
+    }
+    #mixer-button-container{
+        display: inline-block;
+        margin: 5em 0 5em 0;
+        padding: 1em;
+        border-radius: 10px;
+        box-shadow: 0px 10px 25px 10px rgba(0,0,0,0.15);
+        -webkit-box-shadow: 0px 10px 25px 10px rgba(0,0,0,0.15);
+        -moz-box-shadow: 0px 10px 25px 10px rgba(0,0,0,0.15);
+        .mixitup-control-active{
+            border-bottom: 5px solid $green;
+            font-family: $bold;
+        }
+        button{
+            background: none;
+            border: 0;
+            font-family: $light;
+            font-size: 20px;
+            margin: 15px;
         }
     }
 }
@@ -185,6 +212,7 @@ img#logo{
         bottom: 0;
     }
 }
+// Key responsibilities
 #key-responsibilities-container{
     top: 0;
     video{
@@ -222,11 +250,14 @@ img#logo{
         width: 100%;
     }
 }
+// Footer
 #footer-container{
     background-color: $primary-color;
     color: $grey;
     padding: 2em;
     margin-top: 5em;
+    position: relative;
+    top: 25em;
     p{
         margin-bottom: 0;
     }
