@@ -182,6 +182,7 @@ img#logo{
         }
     }
     .single-project{
+        margin-bottom: 5em;
         img{
             width: 100%;
             border-radius: 10px;
@@ -263,6 +264,7 @@ img#logo{
 }
 // Key responsibilities
 #key-responsibilities-container{
+    margin-bottom: 5em;
     top: 0;
     video{
         width: 100%;
@@ -274,6 +276,10 @@ img#logo{
     margin-left: auto;
     margin-right: auto;
     padding: 0 1em 0 1em;
+}
+.content-container2{
+    margin-left: auto;
+    margin-right: auto;
 }
 #project-images-container{
     top: 10em;
@@ -291,6 +297,7 @@ img#logo{
         img{
             width: 100%;
             border-radius: 5px;
+            cursor: pointer;
         }
     }
 }
@@ -310,6 +317,43 @@ img#logo{
     p{
         margin-bottom: 0;
     }
+}
+//---------- Lightbox ----------//
+#Lightbox{
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	left: 0;
+	top: 0;
+	color: white;
+	z-index: 20;
+}
+#Lightbox-Content{
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+	top: 30%;
+    img{
+        width: 100%;
+    }
+    .close-button {
+        font-size: 30px;
+        color: $primary-color;
+        position: relative;
+        cursor: pointer;
+        top: 2em;
+        left: 90%;
+        &:hover{
+            color: $green;
+            transition: all 0.2s ease;
+        }
+    }
+
+}
+.preventscroll{
+	overflow: hidden;
 }
 @media screen and (min-width: 768px){
     #header-bg{
@@ -367,13 +411,23 @@ img#logo{
             max-width: 80%;
         }
     }
-
+    #Lightbox-Content{
+		top:8%;
+	}
 }
 
 
+@media screen and (min-width: 1024px){
+    #Lightbox-Content{
+        width: 60%;
+    }
+}
 @media screen and (min-width: 1200px){
-
+    #Lightbox-Content{
+        top: 10%;
+    }
 }
+
 @media screen and (min-width: 1440px){
     .featured-image-parent > *{
         height: 80vh;
@@ -388,8 +442,14 @@ img#logo{
     .content-container{
         max-width: 1500px;
     }
+    .content-container2{
+        max-width: 2000px;
+    }
     #gutenburg-content-container{
         top: 30em;
     }
+    #Lightbox-Content{
+		width: 60%;
+	}
     
 }

@@ -38,8 +38,43 @@ jQuery(function($){
         }
 
     }
+    
 
+    
+    
+
+	function lightBoxModal() {
+		//----Lightbox----//
+		var	lightBox = $("#Lightbox");
+		var Images = $(".single-image");
+        
+		Images.click(function(){
+			lightBox.fadeIn("fast");
+            console.log('Images');
+			for (var i = 0; i < Images.length; i++) {
+                
+				var image = this.getElementsByTagName('img')[0];
+				document.getElementById('Lightbox-Image').src = image.src;
+			}
+			$('body').addClass('preventscroll');
+
+		});
+
+
+		$(".close-button").click(function(){
+			$('body').removeClass('preventscroll');
+			lightBox.fadeOut("fast");
+
+		});
+
+		$("#Lightbox").click(function(){
+			$('body').removeClass('preventscroll');
+			lightBox.fadeOut("fast");
+
+		});
+
+	}
+
+	lightBoxModal();
     var mixer = mixitup('#mixer-cont', mixer_config);
-
-
 });
