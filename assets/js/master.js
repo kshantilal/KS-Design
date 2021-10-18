@@ -27,13 +27,14 @@ jQuery(function($){
 
     var mixer_config = {
         load: {
-            filter: '.web'
+            filter: '.web',
+            sort: 'default:desc'
         },
         animation: {
-            duration: 239,
+            duration: 250,
             nudge: true,
             reverseOut: false,
-            effects: 'fade scale(0.55) translateY(20%)'
+            effects: "fade scale(0.01) translateX(20%)"
         }
 
     }

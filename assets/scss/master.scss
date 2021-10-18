@@ -39,6 +39,24 @@ h1, h2, h3, h4, h5, h6{
         transition: 0.3s;
     }
 }
+div.wpforms-container-full .wpforms-form input[type="submit"], div.wpforms-container-full .wpforms-form button[type="submit"], div.wpforms-container-full .wpforms-form .wpforms-page-button{
+    font-size: 20px!important;
+    border: none!important;
+    font-family: $bold;
+    color: $primary-color;
+    padding: 10px 20px 10px 20px;
+    background-color: $green!important;
+    border-radius: 10em;
+    transition: 0.3s;
+}
+div.wpforms-container-full .wpforms-form input[type="submit"]:hover, div.wpforms-container-full .wpforms-form input[type="submit"]:focus, div.wpforms-container-full .wpforms-form input[type="submit"]:active, div.wpforms-container-full .wpforms-form button[type="submit"]:hover, div.wpforms-container-full .wpforms-form button[type="submit"]:focus, div.wpforms-container-full .wpforms-form button[type="submit"]:active, div.wpforms-container-full .wpforms-form .wpforms-page-button:hover, div.wpforms-container-full .wpforms-form .wpforms-page-button:active, div.wpforms-container-full .wpforms-form .wpforms-page-button:focus{
+    color: $green;
+    background-color: $primary-color!important;
+    transition: 0.3s;
+}
+input.wpforms-field-name-last .wpforms-field-required{
+    border-radius: 5px;
+}
 // Navigation
 nav{
     transition: 0.5s;
@@ -168,6 +186,10 @@ img#logo{
             width: 100%;
             border-radius: 10px;
         }
+        .project-info{
+            margin-top: 2em;
+            color: $black;
+        }
     }
     #mixer-button-container{
         display: inline-block;
@@ -190,8 +212,35 @@ img#logo{
         }
     }
 }
+// Contact
+#contact{
+    padding: 5em;
+    margin-top: 5em;
+    background-color: #f4f4f4;
+    h2{
+        color: $secondary-color;
+    }
+    label{
+        color: $secondary-color;
+    }
+    #contact-container{
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    i{
+        margin-right: 10px;
+    }
+    #contact-info{
+        margin-bottom: 2em;
+    }
+}
+
+.wpforms-confirmation-container-full{
+    background: none;
+    border: none; 
+}
 #project-header-container{
-    margin-bottom: 5em;
+    margin-bottom: 10em;
     #project-text-container {
         padding-top: 13em;
         text-align: center;
@@ -220,7 +269,7 @@ img#logo{
     }
 }
 .content-container{
-    position: relative;
+    // position: relative;
     max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
@@ -256,7 +305,7 @@ img#logo{
     color: $grey;
     padding: 2em;
     margin-top: 5em;
-    position: relative;
+    // position: relative;
     top: 25em;
     p{
         margin-bottom: 0;
@@ -308,10 +357,15 @@ img#logo{
         padding: 0 5em 0 5em;
     }
     #project-header-container{
-        height: 100vh;
+        // height: 100vh;
     }
     #gutenburg-content-container{
         top: 20em;
+    }
+    #contact{
+        #contact-container{
+            max-width: 80%;
+        }
     }
 
 }

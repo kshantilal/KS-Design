@@ -157,8 +157,11 @@
                                     
                                     <a href="<?php the_permalink(); ?>">
                                     <img src="<?php echo wp_get_attachment_url( $attachment_id );?>" alt="">
+                                    <div class="project-info">
+                                        <h3><?php the_title();?></h3>
+                                        <p><?php the_field('project_blurb'); ?></p>
+                                    </div>
                                     
-                                    <!-- <?php the_post_thumbnail(); ?> -->
                                     </a>
                                 <?php endforeach;?> 
                             <?php endif; ?>
@@ -168,6 +171,20 @@
                 <?php endwhile; ?>
             </div>
 
+        </div>
+    </section>
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center" id="contact-container">
+                    <div id="contact-info">
+                        <h2><i class="fas fa-paper-plane"></i>Get in touch</h2>
+                    </div>
+                    <div id="contact-form">
+                        <?php echo do_shortcode('[wpforms id="126" title="false"]'); ?>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     </div>
