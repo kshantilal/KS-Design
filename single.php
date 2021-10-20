@@ -33,13 +33,18 @@ This page renders out single blog posts
     <section id="key-responsibilities-container" class="content-container">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-12 col-md-5">
+                <div class="col-md-12 col-lg-5">
+                    <div id="objectives">
+                        <?php echo get_lzb_meta( 'margin-top' ); ?> 
+                        <?php echo get_lzb_meta( 'objectives-title' ); ?>                  
+                        <?php echo get_lzb_meta( 'objectives' ); ?>
+                    </div>
                     <div id="key-responsibilities-text">
-                        <h2>Key responsibilities</h2>
+                        <?php echo get_lzb_meta( 'key-responsibilities-title' ); ?>
                         <?php echo get_lzb_meta( 'key-responsibilities' ); ?>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-7">
+                <div class="col-md-12 col-lg-7">
                     <div id="key-responsibilities-image">
                         <?php echo get_lzb_meta( 'image' ); ?>
                     </div>

@@ -24,24 +24,28 @@ jQuery(function($){
           clickable: true,
         },
     });
-
-    var mixer_config = {
-        load: {
-            filter: '.web',
-            sort: 'default:desc'
-        },
-        animation: {
-            duration: 250,
-            nudge: true,
-            reverseOut: false,
-            effects: "fade scale(0.01) translateX(20%)"
+    // change to homepage when launching
+    if (window.location.pathname=='/portfolio/') {
+        var mixer_config = {
+            load: {
+                filter: '.web',
+                sort: 'default:desc'
+            },
+            animation: {
+                duration: 250,
+                nudge: true,
+                reverseOut: false,
+                effects: "fade scale(0.01) translateX(20%)"
+            }
+    
         }
-
+        var mixer = mixitup('#mixer-cont', mixer_config);
     }
     
+    
 
     
-    
+
 
 	function lightBoxModal() {
 		//----Lightbox----//
@@ -50,7 +54,6 @@ jQuery(function($){
         
 		Images.click(function(){
 			lightBox.fadeIn("fast");
-            console.log('Images');
 			for (var i = 0; i < Images.length; i++) {
                 
 				var image = this.getElementsByTagName('img')[0];
@@ -76,5 +79,5 @@ jQuery(function($){
 	}
 
 	lightBoxModal();
-    var mixer = mixitup('#mixer-cont', mixer_config);
+    
 });

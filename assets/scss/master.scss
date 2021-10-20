@@ -17,9 +17,11 @@ $big-text: 100px;
 // }
 body{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     font-family: $light;
     color: $body-color;
+    display: flex;
+    flex-direction: column;
 }
 h1, h2, h3, h4, h5, h6{
     font-family: $bold;
@@ -184,8 +186,17 @@ img#logo{
     .single-project{
         margin-bottom: 5em;
         img{
+            transition: 0.3s;
             width: 100%;
             border-radius: 10px;
+            &:hover{
+                transition: 0.3s;
+                -moz-transform: translate(0px, -10px);
+                -ms-transform: translate(0px, -10px);
+                -o-transform: translate(0px, -10px);
+                -webkit-transform: translate(0px, -10px);
+                transform: translate(0px, -10px)
+            }
         }
         .project-info{
             margin-top: 2em;
@@ -269,6 +280,9 @@ img#logo{
     video{
         width: 100%;
     }
+    #objectives, #key-responsibilities-text{
+        margin-bottom: 2em;
+    }
 }
 .content-container{
     // position: relative;
@@ -294,15 +308,27 @@ img#logo{
 #gutenburg-content-container{
     top: 10em;
     .project-image{
+        transition: 0.3s;
         img{
             width: 100%;
             border-radius: 5px;
             cursor: pointer;
         }
+        &:hover{
+            transition: 0.3s;
+            -moz-transform: translate(0px, -10px);
+            -ms-transform: translate(0px, -10px);
+            -o-transform: translate(0px, -10px);
+            -webkit-transform: translate(0px, -10px);
+            transform: translate(0px, -10px)
+        }
     }
 }
 #help-center-key-responsibility-image{
     img{
+        width: 100%;
+    }
+    .special-image{
         width: 100%;
     }
 }
@@ -311,14 +337,21 @@ img#logo{
     background-color: $primary-color;
     color: $grey;
     padding: 2em;
-    margin-top: 5em;
-    // position: relative;
+    margin-top: auto;
     top: 25em;
+    #footer-content{
+        transition: 0.3s;
+        display: inline-block;
+        &:hover{
+            transition: 0.3s;
+            color: $white;
+        }
+    }
     p{
         margin-bottom: 0;
     }
 }
-//---------- Lightbox ----------//
+// Lightbox
 #Lightbox{
 	display: none;
 	position: fixed;
@@ -400,9 +433,6 @@ img#logo{
         max-width: 1280px;
         padding: 0 5em 0 5em;
     }
-    #project-header-container{
-        // height: 100vh;
-    }
     #gutenburg-content-container{
         top: 20em;
     }
@@ -414,7 +444,13 @@ img#logo{
     #Lightbox-Content{
 		top:8%;
 	}
+    #help-center-key-responsibility-image{
+        img.special-image{
+            width: 70%;
+        }
+    }
 }
+
 
 
 @media screen and (min-width: 1024px){
