@@ -135,7 +135,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="row" id="mixer-cont">
                  <!-- Iterate through each post -->
                 <?php while(have_posts()) : the_post(); ?>
@@ -170,7 +169,6 @@
                     </div>
                 <?php endwhile; ?>
             </div>
-
         </div>
     </section>
     <section id="contact">

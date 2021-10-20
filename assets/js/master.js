@@ -41,11 +41,6 @@ jQuery(function($){
         }
         var mixer = mixitup('#mixer-cont', mixer_config);
     }
-    
-    
-
-    
-
 
 	function lightBoxModal() {
 		//----Lightbox----//
