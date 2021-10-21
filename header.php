@@ -40,7 +40,7 @@ if( is_front_page() ){
     <nav id="project-nav" class="navbar fixed-top navbar-expand-sm navbar-dark" role="navigation" aria-label="Secondary Navigation">
     <div class="container d-flex flex-grow-1">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <a class="nav-brand" href="/portfolio/">
+        <a class="nav-brand" href="<?php echo esc_url( home_url('/') ); ?>">
             <img id="logo" src="<?php echo get_template_directory_uri() . '/public/img/Design Logo.png'?>" alt="">
         </a>
         <div class="text-right">

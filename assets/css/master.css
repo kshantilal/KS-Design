@@ -1,20 +1,32 @@
+@font-face {
+  font-family: "AvenirLight";
+  src: url("../fonts/AvenirLight.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/AvenirLight.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLight.woff") format("woff2"), url("../fonts/AvenirLight.woff") format("woff"), url("../fonts/AvenirLight.ttf") format("truetype");
+}
+@font-face {
+  font-family: "AvenirBlack";
+  src: url("../fonts/AvenirBlack.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/AvenirBlack.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirBlack.woff") format("woff2"), url("../fonts/AvenirBlack.woff") format("woff"), url("../fonts/AvenirBlack.ttf") format("truetype");
+}
 body {
   width: 100%;
   height: 100vh;
-  font-family: Avenir Light, Helvetica, Arial, sans-serif;
+  font-family: "AvenirLight", Helvetica, Arial, sans-serif;
   color: #333333;
   display: flex;
   flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Avenir Black, Helvetica, Arial Black, sans-serif;
+  font-family: "AvenirBlack", Helvetica, Arial Black, sans-serif;
   color: #2E3644;
 }
 
 .btn {
   font-size: 1.25rem;
-  font-family: Avenir Black, Helvetica, Arial Black, sans-serif;
+  font-family: "AvenirBlack", Helvetica, Arial Black, sans-serif;
   color: #2E3644;
   padding: 10px 20px 10px 20px;
   background-color: #8aeebc;
@@ -30,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
 div.wpforms-container-full .wpforms-form input[type=submit], div.wpforms-container-full .wpforms-form button[type=submit], div.wpforms-container-full .wpforms-form .wpforms-page-button {
   font-size: 20px !important;
   border: none !important;
-  font-family: Avenir Black, Helvetica, Arial Black, sans-serif;
+  font-family: "AvenirBlack", Helvetica, Arial Black, sans-serif;
   color: #2E3644;
   padding: 10px 20px 10px 20px;
   background-color: #8aeebc !important;
@@ -112,7 +124,7 @@ nav a {
 }
 #header-bg #header-name-title {
   font-size: 24px;
-  font-family: Avenir Light, Helvetica, Arial, sans-serif;
+  font-family: "AvenirLight", Helvetica, Arial, sans-serif;
   color: #d1d2d4;
 }
 #header-bg #header-job-title {
@@ -120,7 +132,7 @@ nav a {
 }
 #header-bg #header-job-title-2 {
   color: #d1d2d4;
-  font-family: Avenir Light, Helvetica, Arial, sans-serif;
+  font-family: "AvenirLight", Helvetica, Arial, sans-serif;
 }
 
 img#logo {
@@ -207,18 +219,18 @@ img#logo {
 }
 #projects #mixer-button-container .mixitup-control-active {
   border-bottom: 5px solid #8aeebc;
-  font-family: Avenir Black, Helvetica, Arial Black, sans-serif;
+  font-family: "AvenirBlack", Helvetica, Arial Black, sans-serif;
 }
 #projects #mixer-button-container button {
   background: none;
   border: 0;
-  font-family: Avenir Light, Helvetica, Arial, sans-serif;
+  font-family: "AvenirLight", Helvetica, Arial, sans-serif;
   font-size: 20px;
   margin: 15px;
 }
 
 #contact {
-  padding: 5em;
+  padding: 5em 1em 5em 1em;
   margin-top: 5em;
   background-color: #f4f4f4;
 }
@@ -446,6 +458,10 @@ img#logo {
 
   #help-center-key-responsibility-image img.special-image {
     width: 70%;
+  }
+
+  #contact {
+    padding: 5em;
   }
 }
 @media screen and (min-width: 1024px) {

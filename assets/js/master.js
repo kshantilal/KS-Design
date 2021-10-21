@@ -24,8 +24,8 @@ jQuery(function($){
           clickable: true,
         },
     });
-    // change to homepage when launching
-    if (window.location.pathname=='/portfolio/') {
+    
+    if (window.location.pathname=='/') {
         var mixer_config = {
             load: {
                 filter: '.web',

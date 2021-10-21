@@ -101,7 +101,7 @@
                 <div class="col-12">
                     <div id="other">
                         <h2>other digs</h2>
-                        <p>jQuery | Node.js | Sass | Bootstrap | Jira | SEO | Google Analytics</p>
+                        <p>jQuery | Node.js | Sass | Bootstrap | JIRA | SEO | Google Analytics</p>
                     </div>
                 </div>
             </div>

@@ -5,12 +5,27 @@ $green: #8aeebc;
 $grey: #d1d2d4;
 $white: #ffffff;
 $black: #000000;
-$bold: Avenir Black, Helvetica, Arial Black, sans-serif;
-$light: Avenir Light, Helvetica, Arial, sans-serif;
+$bold: 'AvenirBlack', Helvetica, Arial Black, sans-serif;
+$light: 'AvenirLight', Helvetica, Arial, sans-serif;
 $big-text: 100px;
 
 @import "./node_modules/rfs/scss";
-
+@font-face {
+    font-family: 'AvenirLight';
+    src: url('../fonts/AvenirLight.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/AvenirLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/AvenirLight.woff') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/AvenirLight.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/AvenirLight.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: 'AvenirBlack';
+    src: url('../fonts/AvenirBlack.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/AvenirBlack.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/AvenirBlack.woff') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/AvenirBlack.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/AvenirBlack.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
 body{
     width: 100%;
     height: 100vh;
@@ -222,7 +237,7 @@ img#logo{
 }
 // Contact
 #contact{
-    padding: 5em;
+    padding: 5em 1em 5em 1em;
     margin-top: 5em;
     background-color: #f4f4f4;
     h2{
@@ -448,6 +463,9 @@ img#logo{
         img.special-image{
             width: 70%;
         }
+    }
+    #contact{
+        padding: 5em;
     }
 }
 

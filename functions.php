@@ -10,7 +10,6 @@ add_theme_support( 'post-thumbnails' );
 // Hooks
 add_action('wp_enqueue_scripts', 'customScripts');
 
-
 /**
  * Register Custom Navigation Walker
  */
