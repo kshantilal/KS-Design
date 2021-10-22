@@ -24,7 +24,7 @@
                 <div class="col-sm-12 col-md-8">
                     <div id="profile-content">
                         <h1>about.</h1>
-                        <p>I am a passionate Digital Designer with over 4 years of experience in a multitude of areas including front-end web development, digital design, content creation, and POS. Advanced HTML and CSS, JavaScript and jQuery, PHP and WordPress CMS development as well as Adobe Creative Suite, are some of the key areas I have technical design expertise.</p>
+                        <p>I have 4 years of experience in a multitude of areas including front-end web development, digital design, content creation, and POS. I have technical design expertise in Adobe Creative Suite, PHP, WordPress CMS development, Advanced HTML and CSS, JavaScript and jQuery. My approach to design is about creating future proof, simplified and aesthetic solutions.</p>
                         <div class="text-center text-md-left">
                             <a id="cv" class="btn" href="<?php echo get_template_directory_uri() . '/public/files/Kunal_Shantilal_CV.pdf' ?>">View CV</a>
                         </div>
