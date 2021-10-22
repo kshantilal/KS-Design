@@ -4,9 +4,9 @@
             <div class="row align-items-center flex-wrap w-100">
                 <div class="col-12 col-6 mx-auto">
                     <div id="header-info">
-                        <h1 id="header-name-title">Hi, my names Kunal</h1>
+                        <h1 id="header-name-title">Hi, my name is Kunal</h1>
                         <h2 id="header-job-title">UX & UI Designer</h2>
-                        <h3 id="header-job-title-2">Front-end developer</h3>
+                        <h3 id="header-job-title-2">Front-end Developer</h3>
                         <a href="https://www.linkedin.com/in/kunalshantilal/" target="_blank"><i class="fab fa-2x fa-linkedin"></i></a><a href="https://github.com/kshantilal" target="_blank"><i class="fab fa-2x fa-github-square"></i></a>
                     </div>
                 </div>
