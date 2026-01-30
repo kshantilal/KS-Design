@@ -1,13 +1,11 @@
 @font-face {
   font-family: "AvenirLight";
-  src: url("../fonts/AvenirLight.eot");
-  /* IE9 Compat Modes */
+  src: url("../fonts/AvenirLight.eot"); /* IE9 Compat Modes */
   src: url("../fonts/AvenirLight.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLight.woff") format("woff2"), url("../fonts/AvenirLight.woff") format("woff"), url("../fonts/AvenirLight.ttf") format("truetype");
 }
 @font-face {
   font-family: "AvenirBlack";
-  src: url("../fonts/AvenirBlack.eot");
-  /* IE9 Compat Modes */
+  src: url("../fonts/AvenirBlack.eot"); /* IE9 Compat Modes */
   src: url("../fonts/AvenirBlack.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirBlack.woff") format("woff2"), url("../fonts/AvenirBlack.woff") format("woff"), url("../fonts/AvenirBlack.ttf") format("truetype");
 }
 body {
@@ -181,12 +179,14 @@ img#logo {
 
 #projects #my-work h1 {
   font-size: calc(2.375rem + 13.5vw);
-  text-align: center;
 }
 @media (min-width: 1200px) {
   #projects #my-work h1 {
     font-size: 12.5rem;
   }
+}
+#projects #my-work h1 {
+  text-align: center;
 }
 #projects .single-project {
   margin-bottom: 5em;
@@ -412,7 +412,6 @@ img#logo {
   #header-bg #header-job-title-2 {
     font-size: 60px;
   }
-
   #about h1 {
     margin-top: 0;
     text-align: left;
@@ -426,40 +425,31 @@ img#logo {
   #about #other {
     text-align: left;
   }
-
   .featured-image-parent > * {
     height: 70vh;
   }
-
   #key-responsibilities-container {
     top: 10em;
   }
-
   #project-images-container {
     top: 20em;
   }
-
   .content-container {
     max-width: 1280px;
     padding: 0 5em 0 5em;
   }
-
   #gutenburg-content-container {
     top: 20em;
   }
-
   #contact #contact-container {
     max-width: 80%;
   }
-
   #Lightbox-Content {
     top: 8%;
   }
-
   #help-center-key-responsibility-image img.special-image {
     width: 70%;
   }
-
   #contact {
     padding: 5em;
   }
@@ -478,28 +468,22 @@ img#logo {
   .featured-image-parent > * {
     height: 80vh;
   }
-
   #key-responsibilities-container {
     top: 25em;
     margin-bottom: 5em;
   }
-
   #project-images-container {
     top: 30em;
   }
-
   .content-container {
     max-width: 1500px;
   }
-
   .content-container2 {
     max-width: 2000px;
   }
-
   #gutenburg-content-container {
     top: 30em;
   }
-
   #Lightbox-Content {
     width: 60%;
   }

@@ -25,7 +25,8 @@ jQuery(function($){
         },
     });
     
-    if (window.location.pathname=='/') {
+    // if (window.location.pathname=='/') {
+    if (document.querySelector('#mixer-cont')) {
         var mixer_config = {
             load: {
                 filter: '.web',
