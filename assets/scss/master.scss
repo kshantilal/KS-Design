@@ -7,6 +7,7 @@ $white: #ffffff;
 $black: #000000;
 $bold: 'AvenirBlack', Helvetica, Arial Black, sans-serif;
 $light: 'AvenirLight', Helvetica, Arial, sans-serif;
+$regular: 'AvenirRegular' ,Helvetica, Arial, sans-serif;
 $big-text: 100px;
 
 @import "./node_modules/rfs/scss";
@@ -17,6 +18,14 @@ $big-text: 100px;
          url('../fonts/AvenirLight.woff') format('woff2'), /* Super Modern Browsers */
          url('../fonts/AvenirLight.woff') format('woff'), /* Pretty Modern Browsers */
          url('../fonts/AvenirLight.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: 'AvenirRegular';
+    src: url('../fonts/AvenirRegular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/AvenirRegular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/AvenirRegular.woff') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/AvenirRegular.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/AvenirRegular.ttf')  format('truetype'), /* Safari, Android, iOS */
 }
 @font-face {
     font-family: 'AvenirBlack';
@@ -285,6 +294,60 @@ img#logo{
         bottom: 0;
     }
 }
+// Project intro 
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.project-intro{
+    width: 100%;
+    padding-top: 5%;
+    text-align: left;
+}
+#project-intro-container{
+    width: 100%;
+    margin: auto;
+    padding-top: 5%;
+}
+.project-intro-container{
+    color: $white;
+    background-color: $primary-color;
+    padding-bottom: 5em;
+    h1, h2{
+        color: $white;
+    }
+    h3{
+        font-family: "AvenirRegular";
+        color: $white;
+    }
+}
+.hero-dark {
+  background: $primary-color; /* your dark */
+}
+
+.section-light {
+  background: $white; /* your beige */
+}
+
+.wave-divider {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px; /* avoids a tiny gap */
+  line-height: 0;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 80px; /* adjust */
+}
+
+.wave-divider path {
+  fill: $white; /* same as next section background */
+}
+
 // Key responsibilities
 #key-responsibilities-container{
     margin-bottom: 5em;
@@ -467,6 +530,17 @@ img#logo{
     }
     #contact{
         padding: 5em;
+    }
+    #project-intro-container{
+        width: 80%;
+        margin: auto;
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+    .project-intro{
+        width: 50%;
+        padding: 2em;
+        text-align: left!important;
     }
 }
 

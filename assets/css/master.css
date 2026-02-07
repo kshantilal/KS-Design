@@ -4,6 +4,11 @@
   src: url("../fonts/AvenirLight.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLight.woff") format("woff2"), url("../fonts/AvenirLight.woff") format("woff"), url("../fonts/AvenirLight.ttf") format("truetype");
 }
 @font-face {
+  font-family: "AvenirRegular";
+  src: url("../fonts/AvenirRegular.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/AvenirRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirRegular.woff") format("woff2"), url("../fonts/AvenirRegular.woff") format("woff"), url("../fonts/AvenirRegular.ttf") format("truetype");
+}
+@font-face {
   font-family: "AvenirBlack";
   src: url("../fonts/AvenirBlack.eot"); /* IE9 Compat Modes */
   src: url("../fonts/AvenirBlack.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirBlack.woff") format("woff2"), url("../fonts/AvenirBlack.woff") format("woff"), url("../fonts/AvenirBlack.ttf") format("truetype");
@@ -277,6 +282,63 @@ img#logo {
   bottom: 0;
 }
 
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-intro {
+  width: 100%;
+  padding-top: 5%;
+  text-align: left;
+}
+
+#project-intro-container {
+  width: 100%;
+  margin: auto;
+  padding-top: 5%;
+}
+
+.project-intro-container {
+  color: #ffffff;
+  background-color: #2E3644;
+  padding-bottom: 5em;
+}
+.project-intro-container h1, .project-intro-container h2 {
+  color: #ffffff;
+}
+.project-intro-container h3 {
+  font-family: "AvenirRegular";
+  color: #ffffff;
+}
+
+.hero-dark {
+  background: #2E3644; /* your dark */
+}
+
+.section-light {
+  background: #ffffff; /* your beige */
+}
+
+.wave-divider {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px; /* avoids a tiny gap */
+  line-height: 0;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 80px; /* adjust */
+}
+
+.wave-divider path {
+  fill: #ffffff; /* same as next section background */
+}
+
 #key-responsibilities-container {
   margin-bottom: 5em;
   top: 0;
@@ -452,6 +514,17 @@ img#logo {
   }
   #contact {
     padding: 5em;
+  }
+  #project-intro-container {
+    width: 80%;
+    margin: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+  .project-intro {
+    width: 50%;
+    padding: 2em;
+    text-align: left !important;
   }
 }
 @media screen and (min-width: 1024px) {
