@@ -43,37 +43,61 @@ jQuery(function($){
         var mixer = mixitup('#mixer-cont', mixer_config);
     }
 
-	function lightBoxModal() {
-		//----Lightbox----//
-		var	lightBox = $("#Lightbox");
-		var Images = $(".single-image");
+	// function lightBoxModal() {
+	// 	//----Lightbox----//
+	// 	var	lightBox = $("#Lightbox");
+	// 	var Images = $(".single-image, .image-row img");
         
-		Images.click(function(){
-			lightBox.fadeIn("fast");
-			for (var i = 0; i < Images.length; i++) {
+	// 	Images.click(function(){
+	// 		lightBox.fadeIn("fast");
+	// 		for (var i = 0; i < Images.length; i++) {
                 
-				var image = this.getElementsByTagName('img')[0];
-				document.getElementById('Lightbox-Image').src = image.src;
-			}
-			$('body').addClass('preventscroll');
+	// 			var image = this.getElementsByTagName('img')[0];
+	// 			document.getElementById('Lightbox-Image').src = image.src;
+	// 		}
+	// 		$('body').addClass('preventscroll');
 
-		});
+	// 	});
 
 
-		$(".close-button").click(function(){
-			$('body').removeClass('preventscroll');
-			lightBox.fadeOut("fast");
+	// 	$(".close-button").click(function(){
+	// 		$('body').removeClass('preventscroll');
+	// 		lightBox.fadeOut("fast");
 
-		});
+	// 	});
 
-		$("#Lightbox").click(function(){
-			$('body').removeClass('preventscroll');
-			lightBox.fadeOut("fast");
+	// 	$("#Lightbox").click(function(){
+	// 		$('body').removeClass('preventscroll');
+	// 		lightBox.fadeOut("fast");
 
-		});
+	// 	});
 
-	}
+	// }
+function lightBoxModal() {
+  var lightBox = $("#Lightbox");
+  var images = $(".single-image img, .image-row img");
 
-	lightBoxModal();
+  images.on("click", function () {
+    var src = $(this).attr("src");
+    if (!src) return;
+
+    $("#Lightbox-Image").attr("src", src);
+    lightBox.addClass("is-open");
+    $("body").addClass("preventscroll");
+  });
+
+  $(".close-button, #Lightbox").on("click", function (e) {
+    // stop clicks inside the content from closing
+    if ($(e.target).closest("#Lightbox-Content").length && !$(e.target).hasClass("close-button")) {
+      return;
+    }
+
+    lightBox.removeClass("is-open");
+    $("#Lightbox-Image").attr("src", "");
+    $("body").removeClass("preventscroll");
+  });
+}
+
+$(document).ready(lightBoxModal);
     
 });

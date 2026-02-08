@@ -345,6 +345,24 @@ strong {
   font-family: "AvenirBlack", Helvetica, Arial Black, sans-serif;
 }
 
+.image-row {
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  align-items: flex-end;
+}
+
+.image-row__item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+}
+
+.image-row__item figcaption {
+  padding-top: 1em;
+}
+
 .hero-dark {
   background: #2E3644; /* your dark */
 }
@@ -456,37 +474,57 @@ strong {
 }
 
 #Lightbox {
-  display: none;
   position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  left: 0;
-  top: 0;
-  color: white;
-  z-index: 20;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+#Lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 #Lightbox-Content {
   position: relative;
-  margin: 0 auto;
-  width: 100%;
-  top: 30%;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-#Lightbox-Content img {
-  width: 100%;
-}
-#Lightbox-Content .close-button {
-  font-size: 30px;
-  color: #2E3644;
-  position: relative;
+
+#Lightbox-Image {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
   cursor: pointer;
-  top: 2em;
-  left: 90%;
 }
-#Lightbox-Content .close-button:hover {
-  color: #8aeebc;
-  transition: all 0.2s ease;
+
+/* Keep X always visible */
+.close-button {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.close-button:hover {
+  opacity: 0.8;
 }
 
 .preventscroll {
@@ -538,9 +576,6 @@ strong {
   #contact #contact-container {
     max-width: 80%;
   }
-  #Lightbox-Content {
-    top: 8%;
-  }
   #help-center-key-responsibility-image img.special-image {
     width: 70%;
   }
@@ -562,11 +597,6 @@ strong {
 @media screen and (min-width: 1024px) {
   #Lightbox-Content {
     width: 60%;
-  }
-}
-@media screen and (min-width: 1200px) {
-  #Lightbox-Content {
-    top: 10%;
   }
 }
 @media screen and (min-width: 1440px) {
