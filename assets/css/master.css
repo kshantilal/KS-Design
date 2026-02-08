@@ -313,6 +313,38 @@ img#logo {
   color: #ffffff;
 }
 
+.wp-block-image img {
+  width: 100%;
+  height: auto;
+}
+
+.solution-full-width {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.solution-full-width img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 0 5% 0 5%;
+}
+
+.full-bleed img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+strong {
+  font-family: "AvenirBlack", Helvetica, Arial Black, sans-serif;
+}
+
 .hero-dark {
   background: #2E3644; /* your dark */
 }

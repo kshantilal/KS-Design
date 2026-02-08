@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="row align-items-center" id="project-intro-container">
-                    <div class="col-lg-12 col-xl-6">
+                    <div class="col-lg-12 col-xl-8">
                     <?php
                         $image_raw = get_post_meta(get_the_ID(), 'image', true);
 
@@ -37,7 +37,7 @@
                         }
                         ?>
                     </div>
-                    <div class="col-lg-12 col-xl-6 project-intro">
+                    <div class="col-lg-12 col-xl-4 project-intro">
                         <div class="pb-5">
                             <h3>Role</h3>
                             <p><?php echo get_lzb_meta( 'role' ); ?></p>
@@ -54,15 +54,6 @@
                         </div>
                     </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12 col-xl-6">
-                    <h2><?php echo get_lzb_meta( 'problem' ); ?></h2>
-                    <p><?php echo get_lzb_meta( 'problem-list' ); ?></p>
-                </div>
-                <div class="col-md-12 col-lg-6">
-                   
-                </div>
-            </div>
         </div>
         <div class="wave-divider">
             <svg viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
@@ -70,12 +61,14 @@
              </svg>
          </div>
     </section>
-    <section id="gutenburg-content-container" class="content-container2">
-        <div class="container-fluid">
-            <div class="row">
-                <?php the_content();?>
-            </div>
-        </div>
-    </section>
 
+<section id="gutenburg-content-container" class="content-container2">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="container">
+        <?php the_content(); ?>
+      </div>
+    </div>
+  </div>
+</section>
 <?php get_footer(); ?>
