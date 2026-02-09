@@ -4,6 +4,11 @@
   src: url("../fonts/AvenirLight.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirLight.woff") format("woff2"), url("../fonts/AvenirLight.woff") format("woff"), url("../fonts/AvenirLight.ttf") format("truetype");
 }
 @font-face {
+  font-family: "AvenirRegular";
+  src: url("../fonts/AvenirRegular.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/AvenirRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirRegular.woff") format("woff2"), url("../fonts/AvenirRegular.woff") format("woff"), url("../fonts/AvenirRegular.ttf") format("truetype");
+}
+@font-face {
   font-family: "AvenirBlack";
   src: url("../fonts/AvenirBlack.eot"); /* IE9 Compat Modes */
   src: url("../fonts/AvenirBlack.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirBlack.woff") format("woff2"), url("../fonts/AvenirBlack.woff") format("woff"), url("../fonts/AvenirBlack.ttf") format("truetype");
@@ -92,38 +97,60 @@ nav a {
 }
 
 #header-bg {
+  display: block;
   background-image: url("../img/header-background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  height: 100vh;
+  height: auto;
   position: relative;
   right: 0;
   left: 0;
   top: 0;
 }
 #header-bg .row {
-  margin: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+#header-bg .container {
+  min-height: 100vh;
+}
+#header-bg p {
+  color: #d1d2d4;
+}
+#header-bg #profile-img {
+  text-align: center;
+}
+#header-bg #profile-img img {
+  text-align: center;
+  width: 80%;
+  border-radius: 30em;
 }
 #header-bg #header-info {
   text-align: center;
 }
 #header-bg #header-info a {
-  color: #d1d2d4;
+  color: #2E3644;
+  transition: 0.3s;
 }
-#header-bg #header-info a :hover {
+#header-bg #header-info a:hover {
   color: #8aeebc;
-  transition: 0.3s;
 }
-#header-bg #header-info i {
+#header-bg #header-info a#cv:hover {
+  color: #ffffff;
+}
+#header-bg #header-info a i {
   color: #d1d2d4;
   transition: 0.3s;
-  margin-right: 1em;
+}
+#header-bg #header-info a:hover i {
+  color: #8aeebc;
 }
 #header-bg #header-name-title {
-  font-size: 24px;
-  font-family: "AvenirLight", Helvetica, Arial, sans-serif;
+  font-size: 2rem;
+  font-family: "AvenirRegular", Helvetica, Arial, sans-serif;
   color: #d1d2d4;
+  padding-bottom: 16px;
 }
 #header-bg #header-job-title {
   color: #d1d2d4;
@@ -131,6 +158,14 @@ nav a {
 #header-bg #header-job-title-2 {
   color: #d1d2d4;
   font-family: "AvenirLight", Helvetica, Arial, sans-serif;
+}
+
+#my-description {
+  color: #ffffff;
+}
+
+#cv {
+  margin-bottom: 1em;
 }
 
 img#logo {
@@ -154,11 +189,6 @@ img#logo {
   position: relative;
   bottom: 18px;
 }
-#about #profile-img img {
-  text-align: center;
-  width: 100%;
-  border-radius: 1em;
-}
 #about .skills svg {
   padding-left: 0.2em;
   width: 100%;
@@ -177,6 +207,9 @@ img#logo {
   text-align: center;
 }
 
+#projects #my-work {
+  margin-top: 5%;
+}
 #projects #my-work h1 {
   font-size: calc(2.375rem + 13.5vw);
 }
@@ -277,6 +310,121 @@ img#logo {
   bottom: 0;
 }
 
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-intro {
+  width: 100%;
+  padding-top: 5%;
+  text-align: left;
+}
+
+#project-intro-container {
+  width: 100%;
+  margin: auto;
+  padding-top: 5%;
+}
+
+.project-intro-container {
+  color: #ffffff;
+  background-color: #2E3644;
+  padding-bottom: 5em;
+}
+.project-intro-container h1, .project-intro-container h2 {
+  color: #ffffff;
+}
+.project-intro-container h3, .project-intro-container h4 {
+  font-family: "AvenirRegular";
+  color: #ffffff;
+}
+
+h4 {
+  font-family: "AvenirRegular";
+}
+
+.wp-block-image img {
+  width: 100%;
+  height: auto;
+}
+
+.solution-full-width {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.solution-full-width img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 0 5% 0 5%;
+}
+
+.full-bleed img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+strong {
+  font-family: "AvenirBlack", Helvetica, Arial Black, sans-serif;
+}
+
+.image-row {
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  align-items: flex-end;
+}
+
+.image-row__item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+}
+
+.image-row__item figcaption {
+  padding-top: 1em;
+}
+
+.tooltip-component img {
+  cursor: pointer;
+}
+
+.hero-dark {
+  background: #2E3644; /* your dark */
+}
+
+.section-light {
+  background: #ffffff; /* your beige */
+}
+
+.wave-divider {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px; /* avoids a tiny gap */
+  line-height: 0;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 80px; /* adjust */
+}
+
+.wave-divider path {
+  fill: #ffffff; /* same as next section background */
+}
+
 #key-responsibilities-container {
   margin-bottom: 5em;
   top: 0;
@@ -362,37 +510,57 @@ img#logo {
 }
 
 #Lightbox {
-  display: none;
   position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  left: 0;
-  top: 0;
-  color: white;
-  z-index: 20;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+#Lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 #Lightbox-Content {
   position: relative;
-  margin: 0 auto;
-  width: 100%;
-  top: 30%;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-#Lightbox-Content img {
-  width: 100%;
-}
-#Lightbox-Content .close-button {
-  font-size: 30px;
-  color: #2E3644;
-  position: relative;
+
+#Lightbox-Image {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
   cursor: pointer;
-  top: 2em;
-  left: 90%;
 }
-#Lightbox-Content .close-button:hover {
-  color: #8aeebc;
-  transition: all 0.2s ease;
+
+/* Keep X always visible */
+.close-button {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.close-button:hover {
+  opacity: 0.8;
 }
 
 .preventscroll {
@@ -404,13 +572,16 @@ img#logo {
     text-align: left;
   }
   #header-bg #header-name-title {
-    font-size: 30px;
+    font-size: 3rem;
   }
   #header-bg #header-job-title {
     font-size: 80px;
   }
   #header-bg #header-job-title-2 {
     font-size: 60px;
+  }
+  #header-bg #profile-img img {
+    width: 50%;
   }
   #about h1 {
     margin-top: 0;
@@ -444,24 +615,49 @@ img#logo {
   #contact #contact-container {
     max-width: 80%;
   }
-  #Lightbox-Content {
-    top: 8%;
-  }
   #help-center-key-responsibility-image img.special-image {
     width: 70%;
   }
   #contact {
     padding: 5em;
   }
+  #project-intro-container {
+    width: 80%;
+    margin: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+  .project-intro {
+    width: 50%;
+    padding: 2em;
+    text-align: left !important;
+  }
 }
 @media screen and (min-width: 1024px) {
   #Lightbox-Content {
     width: 60%;
   }
+  #header-bg #profile-img img {
+    width: 80%;
+  }
 }
-@media screen and (min-width: 1200px) {
-  #Lightbox-Content {
-    top: 10%;
+@media (max-width: 1199.98px) {
+  #header-bg {
+    min-height: 100vh;
+  }
+  #header-bg .container {
+    min-height: 100vh;
+    align-items: center;
+  }
+  #header-bg #profile-img {
+    margin-bottom: 2em;
+  }
+  #header-bg #header-info {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  #header-bg #header-info h1 {
+    margin-top: 0;
   }
 }
 @media screen and (min-width: 1440px) {

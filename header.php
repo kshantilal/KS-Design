@@ -62,7 +62,7 @@ if( is_front_page() ){
             </a>
             <div class="text-right">
                 <button id="nav-icon" class="custom-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="navbar-toggler-icon"><i class="fas fa-hamburger fa-2x"></i></span>
+                    <span class="navbar-toggler-icon"><i class="fas fa-bars fa-2x"></i></span>
                 </button>
                 <?php bootstrap_nav(); ?>
             </div>
@@ -77,7 +77,7 @@ if( is_front_page() ){
             </a>
             <div class="text-right">
                 <button id="nav-icon" class="custom-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="navbar-toggler-icon"><i class="fas fa-hamburger fa-2x"></i></span>
+                    <span class="navbar-toggler-icon"><i class="fas fa-bars fa-2x"></i></span>
                 </button>
                 <?php bootstrap_nav_product(); ?>
             </div>

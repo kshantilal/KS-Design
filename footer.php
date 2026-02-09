@@ -5,7 +5,7 @@
                 <div class="row align-items-center flex-wrap w-100">
                     <div class="col-12 mx-auto">
                         <div id="footer-content">
-                            <p><i class="far fa-copyright"></i> 2021 Designed & Developed by Kunal Shantilal</p>
+                            <p><i class="far fa-copyright"></i> 2026 Designed & Developed by Kunal Shantilal</p>
                             <p>Created using a custom Wordpress theme</p>
                         </div>
                     </div>
