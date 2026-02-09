@@ -112,37 +112,66 @@ nav{
   
 // Header
 #header-bg{
+    display: block;
     background-image: url('../img/header-background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 100%;;
-    height: 100vh;
+    width: 100%;
+    height: auto;
     position: relative;
     right: 0;
     left: 0;
     top: 0;
     .row{
-        margin: 0;
+        margin-left: 0;
+        margin-right: 0;
     }
-    #header-info{
+    .container{
+        min-height: 100vh;
+    }
+    p{
+        color: $grey;
+    }
+    #profile-img{
         text-align: center;
-        a{
-            color: $grey;
-            :hover{
+        img{
+            text-align: center;
+            width: 80%;
+            border-radius: 30em;
+        }
+    }
+
+    #header-info {
+        text-align: center;
+
+        a {
+            color: $primary-color;
+            transition: 0.3s;
+
+            &:hover {
                 color: $green;
-                transition: 0.3s;
             }
         }
-        i{
+
+        a#cv {
+            &:hover {
+                color: $white;
+            }
+        }
+        a i {
             color: $grey;
             transition: 0.3s;
-            margin-right: 1em;
+        }
+        a:hover i{
+            color: $green;
         }
     }
+    
     #header-name-title{
-        font-size: 24px;
-        font-family: $light;
+        font-size: 2rem;
+        font-family: $regular;
         color: $grey;
+        padding-bottom: 16px;
     }
     #header-job-title{
         color: $grey;
@@ -151,6 +180,12 @@ nav{
         color: $grey;
         font-family: $light;
     }
+}
+#my-description{
+    color: $white;
+}
+#cv{
+    margin-bottom: 1em;
 }
 img#logo{
     width: 50px;
@@ -166,13 +201,6 @@ img#logo{
     #profile-content{
         position: relative;
         bottom: 18px;
-    }
-    #profile-img{
-        img{
-            text-align: center;
-            width: 100%;
-            border-radius: 1em;
-        }
     }
     .skills{
         svg{
@@ -198,6 +226,7 @@ img#logo{
 // my work projects
 #projects{
     #my-work{
+        margin-top: 5%;
         h1{
             @include rfs(200px);
             text-align: center;
@@ -317,10 +346,13 @@ img#logo{
     h1, h2{
         color: $white;
     }
-    h3{
+    h3, h4{
         font-family: "AvenirRegular";
         color: $white;
     }
+}
+h4{
+    font-family: "AvenirRegular";
 }
 .wp-block-image img {
   width: 100%;
@@ -366,6 +398,9 @@ strong{
 .image-row__item figcaption{
     padding-top: 1em;
   }
+.tooltip-component img{
+    cursor: pointer;
+}
 .hero-dark {
   background: $primary-color; /* your dark */
 }
@@ -573,13 +608,16 @@ strong{
             text-align: left;
         }
         #header-name-title{
-            font-size: 30px;
+            font-size: 3rem;
         }
         #header-job-title{
             font-size: 80px;
         }
         #header-job-title-2{
             font-size: 60px;
+        }
+        #profile-img img{
+            width: 50%;
         }
     }
     #about{
@@ -646,6 +684,32 @@ strong{
 @media screen and (min-width: 1024px){
     #Lightbox-Content{
         width: 60%;
+    }
+    #header-bg{
+        #profile-img img{
+            width: 80%;
+        }
+    }
+}
+@media (max-width: 1199.98px) {
+    #header-bg{
+        min-height: 100vh;
+    }
+    #header-bg .container{
+        min-height: 100vh;
+        align-items: center;
+    }
+    #header-bg #profile-img {
+    margin-bottom: 2em;
+    }
+
+    #header-bg #header-info {
+    margin-top: 0;
+    padding-top: 0;
+    }
+
+    #header-bg #header-info h1 {
+    margin-top: 0;
     }
 }
 @media screen and (min-width: 1200px){

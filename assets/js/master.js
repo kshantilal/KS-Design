@@ -29,7 +29,7 @@ jQuery(function($){
     if (document.querySelector('#mixer-cont')) {
         var mixer_config = {
             load: {
-                filter: '.web',
+                filter: '.mobile',
                 sort: 'default:desc'
             },
             animation: {
@@ -75,7 +75,7 @@ jQuery(function($){
 	// }
 function lightBoxModal() {
   var lightBox = $("#Lightbox");
-  var images = $(".single-image img, .image-row img");
+  var images = $(".single-image img, .image-row img, .tooltip-component img");
 
   images.on("click", function () {
     var src = $(this).attr("src");
