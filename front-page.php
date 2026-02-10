@@ -71,48 +71,96 @@
             </div>
             <div class="row" id="mixer-cont">
                  <!-- Iterate through each post -->
-                <?php while(have_posts()) : the_post(); ?>
-                <!-- Gets the URL of the custom image for the post -->
-                <?php 
-                    $id = get_the_ID();
-                    $banner_img = get_post_meta($id, 'post_banner_img', true);	
-                    $banner_img = explode(',', $banner_img);
-                ?>
+                <?php while (have_posts()) : the_post(); ?>
                 <?php
-                $categories = get_the_category();
-                $slugs = wp_list_pluck($categories, 'slug');
-                $class_names = join(' ', $slugs);
+                    $id = get_the_ID();
+
+                    // MixItUp category classes (mobile/web/graphic)
+                    $categories  = get_the_category();
+                    $slugs       = wp_list_pluck($categories, 'slug');
+                    $class_names = join(' ', $slugs);
+
+                    // Meta: IDs + URLs
+                    $banner_meta = get_post_meta($id, 'post_banner_img', true);
+                    $banner_urls = get_post_meta($id, 'post_banner_img_urls', true);
+
+                    $banner_items = array_filter(array_map('trim', explode(',', (string) $banner_meta)));
+                    $url_items    = array_filter(array_map('trim', explode(',', (string) $banner_urls)));
+
+                    $src = '';
+                    $attachment_id_for_alt = 0;
+
+                    // 1) Try IDs first
+                    foreach ($banner_items as $item) {
+                    if (is_numeric($item)) {
+                        $src = wp_get_attachment_url((int) $item);
+                        if ($src) {
+                        $attachment_id_for_alt = (int) $item;
+                        break;
+                        }
+                    }
+                    }
+
+                    // 2) Fallback to URLs (supports absolute OR relative)
+                    if (!$src) {
+                    foreach ($url_items as $u) {
+                        $u = trim($u);
+                        if (!$u) continue;
+
+                        // If it's a relative path like /wp-content/uploads/...
+                        if (strpos($u, '/wp-content/') !== false) {
+                            // Strip any subdirectory like /portfolio
+                            $relative = strstr($u, '/wp-content/');
+                            $src = home_url($relative);
+                            break;
+                        }
+
+                        // If it's a full URL
+                        if (filter_var($u, FILTER_VALIDATE_URL)) {
+                        $src = $u;
+                        break;
+                        }
+                    }
+                    }
+
+                    // Alt text (only if we have an attachment ID)
+                    $alt = '';
+                    if ($attachment_id_for_alt) {
+                    $alt = get_post_meta($attachment_id_for_alt, '_wp_attachment_image_alt', true);
+                    }
+
+                    $disable_link = get_field('disable_link'); // ACF true/false
                 ?>
-                    <div class="col-sm-12 col-md-6 mix<?php if ($class_names) { echo ' ' . $class_names;} ?> ">
-                        <div class="single-project">          
-                            <?php if( !empty($banner_img) ) :?>
-                                <?php foreach ( $banner_img as $attachment_id ) :?>
-                                <?php
-                                $disable_link = get_field('disable_link'); // true/false from ACF
-                                ?>
-                                <?php if (!$disable_link): ?>
-                                    <?php // Functionality to disable projects using Custom Fields ?>
-                                    <a href="<?php the_permalink(); ?>">
-                                        <img src="<?php echo esc_url(wp_get_attachment_url($attachment_id)); ?>" alt="">
-                                        <div class="project-info">
-                                            <h3><?php the_title(); ?></h3>
-                                            <p><?php the_field('project_blurb'); ?></p>
-                                        </div>
-                                    </a>
-                                <?php else: ?>
-                                    <div class="project-card is-disabled">
-                                        <img src="<?php echo esc_url(wp_get_attachment_url($attachment_id)); ?>" alt="">
-                                        <div class="project-info">
-                                            <h3><?php the_title(); ?></h3>
-                                            <p><?php the_field('project_blurb'); ?></p>
-                                        </div>
-                                    </div>
-                                <?php endif; ?>
-                                <?php endforeach;?> 
-                            <?php endif; ?>
-                           
-                         </div>
+                <?php if (current_user_can('manage_options')): ?>
+
+                <?php endif; ?>
+
+                <div class="col-sm-12 col-md-6 mix<?php echo $class_names ? ' ' . esc_attr($class_names) : ''; ?>">
+                    <div class="single-project">
+
+                    <?php if ($src): ?>
+                        <?php if (!$disable_link): ?>
+                        <a href="<?php the_permalink(); ?>">
+                            <img src="<?php echo esc_url($src); ?>" alt="<?php echo esc_attr($alt); ?>">
+                            <div class="project-info">
+                            <h3><?php the_title(); ?></h3>
+                            <p><?php the_field('project_blurb'); ?></p>
+                            </div>
+                        </a>
+                        <?php else: ?>
+                        <div class="project-card is-disabled">
+                            <img src="<?php echo esc_url($src); ?>" alt="<?php echo esc_attr($alt); ?>">
+                            <div class="project-info">
+                            <h3><?php the_title(); ?></h3>
+                            <p><?php the_field('project_blurb'); ?></p>
+                            </div>
+                        </div>
+                        <?php endif; ?>
+                    <?php endif; ?>
+
                     </div>
+                </div>
+
                 <?php endwhile; ?>
             </div>
         </div>

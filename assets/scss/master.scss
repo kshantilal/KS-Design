@@ -134,9 +134,10 @@ nav{
     }
     #profile-img{
         text-align: center;
+        margin-top: 5em;
         img{
             text-align: center;
-            width: 80%;
+            width: 60%;
             border-radius: 30em;
         }
     }
@@ -616,26 +617,14 @@ strong{
         #header-job-title-2{
             font-size: 60px;
         }
-        #profile-img img{
-            width: 50%;
-        }
-    }
-    #about{
-        h1{
-            margin-top: 0;
-            text-align: left;
-        }
-        #profile-content{
-            margin-left: 2em;
-        }
         #profile-img{
+            margin-top: 0;
             img{
-                text-align: left;
+                margin-top: 0;
+                margin-bottom: 3em;
             }
-        }
-        #other{
-            text-align: left;
-        }
+        } 
+
     }
     .featured-image-parent > *{
         height: 70vh;
@@ -687,33 +676,35 @@ strong{
     }
     #header-bg{
         #profile-img img{
-            width: 80%;
+            width: 40%;
         }
     }
 }
 @media (max-width: 1199.98px) {
     #header-bg{
         min-height: 100vh;
+        .container{
+            min-height: 100vh;
+            align-items: center;
+        }
+        #profile-img {
+            margin-bottom: 2em;
+        }
     }
-    #header-bg .container{
-        min-height: 100vh;
-        align-items: center;
-    }
-    #header-bg #profile-img {
-    margin-bottom: 2em;
-    }
-
-    #header-bg #header-info {
-    margin-top: 0;
-    padding-top: 0;
-    }
-
-    #header-bg #header-info h1 {
-    margin-top: 0;
+    #header-info {
+        margin-top: 0;
+        padding-top: 0;
+            h1 {
+                margin-top: 0;
+            }   
     }
 }
 @media screen and (min-width: 1200px){
-
+    #header-bg{
+        #profile-img img{
+            width: 80%;
+        }
+    }
 }
 
 @media screen and (min-width: 1440px){

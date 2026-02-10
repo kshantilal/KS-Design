@@ -120,10 +120,11 @@ nav a {
 }
 #header-bg #profile-img {
   text-align: center;
+  margin-top: 5em;
 }
 #header-bg #profile-img img {
   text-align: center;
-  width: 80%;
+  width: 60%;
   border-radius: 30em;
 }
 #header-bg #header-info {
@@ -580,21 +581,12 @@ strong {
   #header-bg #header-job-title-2 {
     font-size: 60px;
   }
-  #header-bg #profile-img img {
-    width: 50%;
-  }
-  #about h1 {
+  #header-bg #profile-img {
     margin-top: 0;
-    text-align: left;
   }
-  #about #profile-content {
-    margin-left: 2em;
-  }
-  #about #profile-img img {
-    text-align: left;
-  }
-  #about #other {
-    text-align: left;
+  #header-bg #profile-img img {
+    margin-top: 0;
+    margin-bottom: 3em;
   }
   .featured-image-parent > * {
     height: 70vh;
@@ -638,7 +630,7 @@ strong {
     width: 60%;
   }
   #header-bg #profile-img img {
-    width: 80%;
+    width: 40%;
   }
 }
 @media (max-width: 1199.98px) {
@@ -652,12 +644,17 @@ strong {
   #header-bg #profile-img {
     margin-bottom: 2em;
   }
-  #header-bg #header-info {
+  #header-info {
     margin-top: 0;
     padding-top: 0;
   }
-  #header-bg #header-info h1 {
+  #header-info h1 {
     margin-top: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #header-bg #profile-img img {
+    width: 80%;
   }
 }
 @media screen and (min-width: 1440px) {
