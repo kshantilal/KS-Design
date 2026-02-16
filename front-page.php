@@ -61,7 +61,7 @@
 
                 <div id="mixer-button-container">
                     <?php foreach ($all_categories as $category): ?>
-                        <button type="button" data-filter=".<?php echo esc_attr($category->slug); ?>">
+                        <button type="button" class="control" data-filter=".<?php echo esc_attr($category->slug); ?>">
                             <?php echo esc_html($category->name); ?>
                         </button>
                     <?php endforeach; ?>
@@ -71,7 +71,16 @@
             </div>
             <div class="row" id="mixer-cont">
                  <!-- Iterate through each post -->
-                <?php while (have_posts()) : the_post(); ?>
+                <?php 
+                $projects = new WP_Query([
+                'post_type'      => 'post',
+                'post_status'    => 'publish',
+                'posts_per_page' => -1,
+                'orderby'        => 'date',
+                'order'          => 'DESC',
+                ]);
+                ?>
+                <?php while ($projects->have_posts()) : $projects->the_post(); ?>
                 <?php
                     $id = get_the_ID();
 
@@ -162,6 +171,7 @@
                 </div>
 
                 <?php endwhile; ?>
+                <?php wp_reset_postdata();?>
             </div>
         </div>
     </section>

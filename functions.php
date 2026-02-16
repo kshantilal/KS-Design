@@ -73,6 +73,7 @@ function multi_media_uploader_meta_box() {
 }
 
 function multi_media_uploader_meta_box_func($post) {
+	wp_nonce_field('ks_save_banner_meta', 'ks_banner_meta_nonce');
 	$banner_img = get_post_meta($post->ID,'post_banner_img',true);
 	?>
 	<style type="text/css">
@@ -222,22 +223,33 @@ function multi_media_uploader_field($name, $value = '') {
 }
 
 // Save Meta Box values.
-add_action( 'save_post', 'wc_meta_box_save' );
+add_action('save_post', 'ks_save_banner_meta');
 
-function wc_meta_box_save( $post_id ) {
-	if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return;	
-	}
+function ks_save_banner_meta($post_id) {
 
-	if( !current_user_can( 'edit_post' ) ){
-		return;	
-	}
-	
-	if( isset( $_POST['post_banner_img'] ) ){
-		update_post_meta( $post_id, 'post_banner_img', $_POST['post_banner_img'] );
-	}
-	if ( isset($_POST['post_banner_img_urls']) ) {
-    	update_post_meta($post_id, 'post_banner_img_urls', $_POST['post_banner_img_urls']);
-	}
+    // Skip autosaves / revisions
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+    if (wp_is_post_autosave($post_id)) return;
+    if (wp_is_post_revision($post_id)) return;
 
+    // Verify nonce (added in the meta box output)
+    if (
+        !isset($_POST['ks_banner_meta_nonce']) ||
+        !wp_verify_nonce($_POST['ks_banner_meta_nonce'], 'ks_save_banner_meta')
+    ) {
+        return;
+    }
+
+    // Correct capability check
+    if (!current_user_can('edit_post', $post_id)) return;
+
+    // Save attachment IDs (comma-separated)
+    if (isset($_POST['post_banner_img'])) {
+        update_post_meta($post_id, 'post_banner_img', sanitize_text_field($_POST['post_banner_img']));
+    }
+
+    // Save URLs (comma-separated)
+    if (isset($_POST['post_banner_img_urls'])) {
+        update_post_meta($post_id, 'post_banner_img_urls', sanitize_text_field($_POST['post_banner_img_urls']));
+    }
 }

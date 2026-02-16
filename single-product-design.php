@@ -25,17 +25,32 @@
             <div class="row align-items-center" id="project-intro-container">
                     <div class="col-lg-12 col-xl-8">
                     <?php
-                        $image_raw = get_post_meta(get_the_ID(), 'image', true);
+                    $image_raw = get_post_meta(get_the_ID(), 'project_intro_image', true);
+                    $attachment_id = 0;
+                    $image_url = '';
 
-                        if ($image_raw) {
-                        $image = json_decode(urldecode($image_raw), true);
-                        $id = (int) ($image['id'] ?? 0);
+                    if (!empty($image_raw)) {
+                    $decoded = json_decode(urldecode($image_raw), true);
 
-                        if ($id) {
-                            echo wp_get_attachment_image($id, 'full', false, ['class' => 'img-fluid project-image']);
-                        }
-                        }
-                        ?>
+                    if (is_array($decoded)) {
+                        $attachment_id = (int) ($decoded['id'] ?? 0);
+                        $image_url = $decoded['url'] ?? '';
+                    }
+                    }
+
+                    if ($attachment_id) {
+                    // Best option (portable): uses attachment ID
+                    echo wp_get_attachment_image(
+                        $attachment_id,
+                        'full',
+                        false,
+                        ['class' => 'img-fluid project-image', 'loading' => 'lazy']
+                    );
+                    } elseif (!empty($image_url)) {
+                    // Fallback if ID isn't usable for some reason
+                    echo '<img class="img-fluid project-image" loading="lazy" src="' . esc_url($image_url) . '" alt="">';
+                    }
+                    ?>
                     </div>
                     <div class="col-lg-12 col-xl-4 project-intro">
                         <div class="pb-5">
