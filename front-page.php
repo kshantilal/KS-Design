@@ -12,7 +12,7 @@
                 <div class="col-lg-12 col-xl-7 order-2 order-xl-1">
                     <div id="header-info">
                         <h1 id="header-name-title">Hi, I'm Kunal 👋</h1>
-                        <p>I’m a Product Designer with 8 years’ experience designing SaaS products, specialising in native mobile apps. I’m driven by creating user-centred products that solve real-world problems and make a meaningful difference in people’s everyday lives.</p>
+                        <p>I'm a Product Designer based in Melbourne with 8 years experience in SaaS. At Xero, I shipped native mobile experiences to half a million small businesses across iOS and Android. Now I'm the founding designer on a B2B product, building 0-1. Startups taught me to move fast and own everything; Xero taught me to think carefully at scale. I'm at my best when I'm close to the problem and the people it affects. Take a look at some of my work below.</p>
                         <div class="text-center text-md-left">
                             <a id="cv" class="btn" href="<?php echo get_template_directory_uri() . '/public/files/Kunal_Shantilal_CV_2026.pdf' ?>">View CV</a>
                         </div>
