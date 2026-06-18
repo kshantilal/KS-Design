@@ -603,6 +603,32 @@ strong{
 .preventscroll{
 	overflow: hidden;
 }
+.chip{
+  border-radius: 20px;
+  background-color: #81A5E3;
+  border: #4876C6;
+  font-size: 12px;
+  font-family: $bold;
+  padding: 4px 12px 4px 12px;
+  width: fit-content;
+  p{
+    color: #0B284E;
+    margin: 0;
+  }
+}
+.chip2{
+  border-radius: 20px;
+  background-color: #EEBF03;
+  border: #8F7D5B;
+  font-size: 12px;
+  font-family: $bold;
+  padding: 4px 12px 4px 12px;
+  width: fit-content;
+  p{
+    color: #593B04;
+    margin: 0;
+  }
+}
 @media screen and (min-width: 768px){
     #header-bg{
         #header-info{
