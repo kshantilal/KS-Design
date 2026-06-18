@@ -1,112 +1,32 @@
 <?php get_header(); ?>
     <div id="header-bg">
         <div class="container d-flex h-100">
-            <div class="row align-items-center flex-wrap w-100">
-                <div class="col-12 col-6 mx-auto">
-                    <div id="header-info">
-                        <h1 id="header-name-title">Hi, my names Kunal</h1>
-                        <h2 id="header-job-title">UX & UI Designer</h2>
-                        <h3 id="header-job-title-2">Front-end Developer</h3>
-                        <a href="https://www.linkedin.com/in/kunalshantilal/" target="_blank"><i class="fab fa-2x fa-linkedin"></i></a><a href="https://github.com/kshantilal" target="_blank"><i class="fab fa-2x fa-github-square"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <section id="about">    
-        <div class="container d-flex justify-content-center h-100">
-            <div class="row align-items-center flex-wrap w-100">
-                <div class="col-sm-12 col-md-4 mx-auto">
+            <div class="row align-items-center justify-content-center flex-wrap w-100">
+
+                <div class="col-lg-12 col-xl-5 order-1 order-xl-2">
                     <div id="profile-img">
                         <img src="<?php echo get_template_directory_uri() . '/public/img/personal-photo.jpg'?>">
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-8">
-                    <div id="profile-content">
-                        <h1>about.</h1>
-                        <p>I am a passionate Digital Designer with over 4 years of experience in a multitude of areas including front-end web development, digital design, content creation, and POS. Advanced HTML and CSS, JavaScript and jQuery, PHP and WordPress CMS development as well as Adobe Creative Suite, are some of the key areas I have technical design expertise.</p>
+
+                <div class="col-lg-12 col-xl-7 order-2 order-xl-1">
+                    <div id="header-info">
+                        <h1 id="header-name-title">Hi, I'm Kunal 👋</h1>
+                        <p>I'm a Product Designer based in Melbourne with 8 years experience in SaaS. At Xero, I shipped native mobile experiences to half a million small businesses across iOS and Android. Now I'm the founding designer on a B2B product, building 0-1. Startups taught me to move fast and own everything; Xero taught me to think carefully at scale. I'm at my best when I'm close to the problem and the people it affects. Take a look at some of my work below.</p>
                         <div class="text-center text-md-left">
-                            <a class="btn" href="">Download CV</a>
+                            <a id="cv" class="btn" href="<?php echo get_template_directory_uri() . '/public/files/Kunal_Shantilal_CV_2026.pdf' ?>">View CV</a>
                         </div>
+                        <a href="https://www.linkedin.com/in/kunalshantilal/" target="_blank"><i class="fab fa-2x fa-linkedin"></i></a>
                     </div>
                 </div>
+                <!-- <div class="col-lg-12 col-xl-5">
+                    <div id="profile-img">
+                        <img src="<?php echo get_template_directory_uri() . '/public/img/personal-photo.jpg'?>">
+                    </div>
+                </div> -->
             </div>
         </div>
-        <div class="container">
-            <div class="row row-cols-auto skills-container">
-                <div class="col-4 col-sm-2 col-md-1">
-                    <div class="skills">
-                        <img src="<?php echo get_template_directory_uri() . '/public/img/photoshop.svg' ?>" alt="">
-                    </div>
-                </div>
-                <div class="col-4 col-sm-2 col-md-1">
-                    <div class="skills">
-                        <img src="<?php echo get_template_directory_uri() . '/public/img/illustrator.svg' ?>" alt="">
-                    </div>
-                </div>
-                <div class="col-4 col-sm-2 col-md-1">
-                    <div class="skills">
-                        <img src="<?php echo get_template_directory_uri() . '/public/img/xd.svg' ?>" alt="">
-                    </div>
-                </div>
-                <div class="col-4 col-sm-2 col-md-1">
-                    <div class="skills">
-                        <img src="<?php echo get_template_directory_uri() . '/public/img/indesign.svg' ?>" alt="">
-                    </div>
-                </div>
-                <div class="col-4 col-sm-2 col-md-1">
-                    <div class="skills">
-                        <img src="<?php echo get_template_directory_uri() . '/public/img/aftereffects.svg' ?>" alt="">
-                    </div>
-                </div>
-                <div class="col-4 col-sm-2 col-md-1">
-                    <div class="skills">
-                        <img src="<?php echo get_template_directory_uri() . '/public/img/premiere_pro.svg' ?>" alt="">
-                    </div>
-                </div>
-                <div class="col-4 col-sm-2 col-md-1">
-                    <div class="skills">
-                        <img src="<?php echo get_template_directory_uri() . '/public/img/figma.svg' ?>" alt="">
-                    </div>
-                </div>
-                <div class="col-4 col-sm-2 col-md-1">
-                    <div class="skills">
-                        <img src="<?php echo get_template_directory_uri() . '/public/img/html.svg' ?>" alt="">
-                    </div>
-                </div>
-                <div class="col-4 col-sm-2 col-md-1">
-                    <div class="skills">
-                        <img src="<?php echo get_template_directory_uri() . '/public/img/css.svg' ?>" alt="">
-                    </div>
-                </div>
-                <div class="col-4 col-sm-2 col-md-1">
-                    <div class="skills">
-                        <img src="<?php echo get_template_directory_uri() . '/public/img/js.svg' ?>" alt="">
-                    </div>
-                </div>
-                <div class="col-4 col-sm-2 col-md-1">
-                    <div class="skills">
-                        <img src="<?php echo get_template_directory_uri() . '/public/img/php.svg' ?>" alt="">
-                    </div>
-                </div>
-                <div class="col-4 col-sm-2 col-md-1">
-                    <div class="skills">
-                        <img src="<?php echo get_template_directory_uri() . '/public/img/wordpress.svg' ?>" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div id="other">
-                        <h2>other digs</h2>
-                        <p>jQuery | Node.js | Sass | Bootstrap | Jira | SEO | Google Analytics</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
     <section id="projects">
         <div class="container">
             <div class="row">
@@ -118,56 +38,140 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <div class="controls text-center">
+                <div class="controls text-center">
+                <?php
+                $desired_order = ['mobile', 'web', 'graphic'];
 
-                        <?php
-                        $all_categories = get_categories(array(
-                            'hide_empty' => true,
-                            'orderby' => 'id'
-                        ));
+                $all_categories = get_categories(array(
+                    'hide_empty' => true
+                ));
 
-                        ?>
-                        <div id="mixer-button-container">
-                        <?php foreach($all_categories as $category): ?>
-                                <button type="button" data-filter=".<?php echo $category->slug; ?>"><?php echo $category->name; ?></button>
-                        <?php endforeach; ?>
-                        </div>
-                    </div>
+                // Sort categories by desired order
+                usort($all_categories, function ($a, $b) use ($desired_order) {
+                    $pos_a = array_search($a->slug, $desired_order);
+                    $pos_b = array_search($b->slug, $desired_order);
+
+                    // Categories not in the list go to the end
+                    $pos_a = $pos_a === false ? PHP_INT_MAX : $pos_a;
+                    $pos_b = $pos_b === false ? PHP_INT_MAX : $pos_b;
+
+                    return $pos_a <=> $pos_b;
+                });
+                ?>
+
+                <div id="mixer-button-container">
+                    <?php foreach ($all_categories as $category): ?>
+                        <button type="button" class="control" data-filter=".<?php echo esc_attr($category->slug); ?>">
+                            <?php echo esc_html($category->name); ?>
+                        </button>
+                    <?php endforeach; ?>
+                </div>
+                </div>
                 </div>
             </div>
             <div class="row" id="mixer-cont">
                  <!-- Iterate through each post -->
-                <?php while(have_posts()) : the_post(); ?>
-                <!-- Gets the URL of the custom image for the post -->
                 <?php 
-                    $id = get_the_ID();
-                    $banner_img = get_post_meta($id, 'post_banner_img', true);	
-                    $banner_img = explode(',', $banner_img);
+                $projects = new WP_Query([
+                'post_type'      => 'post',
+                'post_status'    => 'publish',
+                'posts_per_page' => -1,
+                'orderby'        => 'date',
+                'order'          => 'DESC',
+                ]);
                 ?>
+                <?php while ($projects->have_posts()) : $projects->the_post(); ?>
                 <?php
-                $categories = get_the_category();
-                $slugs = wp_list_pluck($categories, 'slug');
-                $class_names = join(' ', $slugs);
+                    $id = get_the_ID();
+
+                    // MixItUp category classes (mobile/web/graphic)
+                    $categories  = get_the_category();
+                    $slugs       = wp_list_pluck($categories, 'slug');
+                    $class_names = join(' ', $slugs);
+
+                    // Meta: IDs + URLs
+                    $banner_meta = get_post_meta($id, 'post_banner_img', true);
+                    $banner_urls = get_post_meta($id, 'post_banner_img_urls', true);
+
+                    $banner_items = array_filter(array_map('trim', explode(',', (string) $banner_meta)));
+                    $url_items    = array_filter(array_map('trim', explode(',', (string) $banner_urls)));
+
+                    $src = '';
+                    $attachment_id_for_alt = 0;
+
+                    // 1) Try IDs first
+                    foreach ($banner_items as $item) {
+                    if (is_numeric($item)) {
+                        $src = wp_get_attachment_url((int) $item);
+                        if ($src) {
+                        $attachment_id_for_alt = (int) $item;
+                        break;
+                        }
+                    }
+                    }
+
+                    // 2) Fallback to URLs (supports absolute OR relative)
+                    if (!$src) {
+                    foreach ($url_items as $u) {
+                        $u = trim($u);
+                        if (!$u) continue;
+
+                        // If it's a relative path like /wp-content/uploads/...
+                        if (strpos($u, '/wp-content/') !== false) {
+                            // Strip any subdirectory like /portfolio
+                            $relative = strstr($u, '/wp-content/');
+                            $src = home_url($relative);
+                            break;
+                        }
+
+                        // If it's a full URL
+                        if (filter_var($u, FILTER_VALIDATE_URL)) {
+                        $src = $u;
+                        break;
+                        }
+                    }
+                    }
+
+                    // Alt text (only if we have an attachment ID)
+                    $alt = '';
+                    if ($attachment_id_for_alt) {
+                    $alt = get_post_meta($attachment_id_for_alt, '_wp_attachment_image_alt', true);
+                    }
+
+                    $disable_link = get_field('disable_link'); // ACF true/false
                 ?>
-                    <div class="col-sm-12 col-md-6 mix<?php if ($class_names) { echo ' ' . $class_names;} ?> ">
-                        <div class="single-project">          
-                            <?php if( !empty($banner_img) ) :?>
-                                <?php foreach ( $banner_img as $attachment_id ) :?>
-                                    
-                                    <a href="<?php the_permalink(); ?>">
-                                    <img src="<?php echo wp_get_attachment_url( $attachment_id );?>" alt="">
-                                    <div class="project-info">
-                                        <h3><?php the_title();?></h3>
-                                        <p><?php the_field('project_blurb'); ?></p>
-                                    </div>
-                                    
-                                    </a>
-                                <?php endforeach;?> 
-                            <?php endif; ?>
-                           
-                         </div>
+                <?php if (current_user_can('manage_options')): ?>
+
+                <?php endif; ?>
+
+                <div class="col-sm-12 col-md-6 mix<?php echo $class_names ? ' ' . esc_attr($class_names) : ''; ?>">
+                    <div class="single-project">
+
+                    <?php if ($src): ?>
+                        <?php if (!$disable_link): ?>
+                        <a href="<?php the_permalink(); ?>">
+                            <img src="<?php echo esc_url($src); ?>" alt="<?php echo esc_attr($alt); ?>">
+                            <div class="project-info">
+                            <h3><?php the_title(); ?></h3>
+                            <p><?php the_field('project_blurb'); ?></p>
+                            </div>
+                        </a>
+                        <?php else: ?>
+                        <div class="project-card is-disabled">
+                            <img src="<?php echo esc_url($src); ?>" alt="<?php echo esc_attr($alt); ?>">
+                            <div class="project-info">
+                            <h3><?php the_title(); ?></h3>
+                            <p><?php the_field('project_blurb'); ?></p>
+                            </div>
+                        </div>
+                        <?php endif; ?>
+                    <?php endif; ?>
+
                     </div>
+                </div>
+
                 <?php endwhile; ?>
+                <?php wp_reset_postdata();?>
             </div>
         </div>
     </section>

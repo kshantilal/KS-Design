@@ -10,7 +10,6 @@ add_theme_support( 'post-thumbnails' );
 // Hooks
 add_action('wp_enqueue_scripts', 'customScripts');
 
-
 /**
  * Register Custom Navigation Walker
  */
@@ -74,6 +73,7 @@ function multi_media_uploader_meta_box() {
 }
 
 function multi_media_uploader_meta_box_func($post) {
+	wp_nonce_field('ks_save_banner_meta', 'ks_banner_meta_nonce');
 	$banner_img = get_post_meta($post->ID,'post_banner_img',true);
 	?>
 	<style type="text/css">
@@ -104,29 +104,62 @@ function multi_media_uploader_meta_box_func($post) {
 					multiple: true 
 				}).on('select', function() {
 					var attech_ids = '';
-					attachments
+					var attech_urls = '';
+
 					var attachments = custom_uploader.state().get('selection'),
-					attachment_ids = new Array(),
-					i = 0;
+						attachment_ids = [],
+						attachment_urls = [],
+						i = 0;
+
 					attachments.each(function(attachment) {
 						attachment_ids[i] = attachment['id'];
-						attech_ids += ',' + attachment['id'];
+
+						// Save RELATIVE URL (works local + production)
+						var relUrl = attachment.attributes.url.replace(window.location.origin, '');
+						attachment_urls[i] = relUrl;
+
+						attech_ids  += ',' + attachment['id'];
+						attech_urls += ',' + relUrl;
+
 						if (attachment.attributes.type == 'image') {
-							$(button).siblings('ul').append('<li data-attechment-id="' + attachment['id'] + '"><a href="' + attachment.attributes.url + '" target="_blank"><img class="true_pre_image" src="' + attachment.attributes.url + '" /></a><i class=" dashicons dashicons-no delete-img"></i></li>');
+							$(button).siblings('ul').append(
+								'<li data-attechment-id="' + attachment['id'] + '" data-attachment-url="' + relUrl + '">' +
+									'<a href="' + relUrl + '" target="_blank">' +
+										'<img class="true_pre_image" src="' + relUrl + '" />' +
+									'</a>' +
+									'<i class="dashicons dashicons-no delete-img"></i>' +
+								'</li>'
+							);
 						} else {
-							$(button).siblings('ul').append('<li data-attechment-id="' + attachment['id'] + '"><a href="' + attachment.attributes.url + '" target="_blank"><img class="true_pre_image" src="' + attachment.attributes.icon + '" /></a><i class=" dashicons dashicons-no delete-img"></i></li>');
+							$(button).siblings('ul').append(
+								'<li data-attechment-id="' + attachment['id'] + '" data-attachment-url="' + relUrl + '">' +
+									'<a href="' + relUrl + '" target="_blank">' +
+										'<img class="true_pre_image" src="' + attachment.attributes.icon + '" />' +
+									'</a>' +
+									'<i class="dashicons dashicons-no delete-img"></i>' +
+								'</li>'
+							);
 						}
 
 						i++;
 					});
 
-					var ids = $(button).siblings('.attechments-ids').attr('value');
+					// IDs: append or set
+					var ids = $(button).siblings('.attechments-ids').val();
 					if (ids) {
-						var ids = ids + attech_ids;
-						$(button).siblings('.attechments-ids').attr('value', ids);
+						$(button).siblings('.attechments-ids').val(ids + attech_ids);
 					} else {
-						$(button).siblings('.attechments-ids').attr('value', attachment_ids);
+						$(button).siblings('.attechments-ids').val(attachment_ids.join(','));
 					}
+
+					// URLs: append or set
+					var urls = $(button).siblings('.attachment-urls').val();
+					if (urls) {
+						$(button).siblings('.attachment-urls').val(urls + attech_urls);
+					} else {
+						$(button).siblings('.attachment-urls').val(attachment_urls.join(','));
+					}
+
 					$(button).siblings('.wc_multi_remove_image_button').show();
 				})
 				.open();
@@ -140,17 +173,20 @@ function multi_media_uploader_meta_box_func($post) {
 
 		});
 
-		jQuery(document).ready(function() {
-			jQuery(document).on('click', '.multi-upload-medias ul li i.delete-img', function() {
-				var ids = [];
-				var this_c = jQuery(this);
-				jQuery(this).parent().remove();
-				jQuery('.multi-upload-medias ul li').each(function() {
-					ids.push(jQuery(this).attr('data-attechment-id'));
-				});
-				jQuery('.multi-upload-medias').find('input[type="hidden"]').attr('value', ids);
+		jQuery(document).on('click', '.multi-upload-medias ul li i.delete-img', function() {
+			var ids = [];
+			var urls = [];
+
+			jQuery(this).parent().remove();
+
+			jQuery('.multi-upload-medias ul li').each(function() {
+				ids.push(jQuery(this).attr('data-attechment-id'));
+				urls.push(jQuery(this).attr('data-attachment-url'));
 			});
-		})
+
+			jQuery('.multi-upload-medias').find('input.attechments-ids').val(ids.join(','));
+			jQuery('.multi-upload-medias').find('input.attachment-urls').val(urls.join(','));
+		});
 	</script>
 
 	<?php
@@ -177,22 +213,43 @@ function multi_media_uploader_field($name, $value = '') {
 		$display = 'inline-block';
 	}
 
-	return '<div class="multi-upload-medias"><ul>' . $image_str . '</ul><a href="#" class="wc_multi_upload_image_button button' . $image . '</a><input type="hidden" class="attechments-ids ' . $name . '" name="' . $name . '" id="' . $name . '" value="' . esc_attr(implode(',', $value)) . '" /><a href="#" class="wc_multi_remove_image_button button" style="display:inline-block;display:' . $display . '">Remove media</a></div>';
+	return '<div class="multi-upload-medias">
+			<ul>' . $image_str . '</ul>
+			<a href="#" class="wc_multi_upload_image_button button' . $image . '</a>
+			<input type="hidden" class="attechments-ids ' . $name . '" name="' . $name . '" id="' . $name . '" value="' . esc_attr(implode(',', $value)) . '" />
+			<input type="hidden" class="attachment-urls ' . $name . '_urls" name="' . $name . '_urls" id="' . $name . '_urls" value="" />
+			<a href="#" class="wc_multi_remove_image_button button" style="display:inline-block;display:' . $display . '">Remove media</a>
+			</div>';
 }
 
 // Save Meta Box values.
-add_action( 'save_post', 'wc_meta_box_save' );
+add_action('save_post', 'ks_save_banner_meta');
 
-function wc_meta_box_save( $post_id ) {
-	if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return;	
-	}
+function ks_save_banner_meta($post_id) {
 
-	if( !current_user_can( 'edit_post' ) ){
-		return;	
-	}
-	
-	if( isset( $_POST['post_banner_img'] ) ){
-		update_post_meta( $post_id, 'post_banner_img', $_POST['post_banner_img'] );
-	}
+    // Skip autosaves / revisions
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+    if (wp_is_post_autosave($post_id)) return;
+    if (wp_is_post_revision($post_id)) return;
+
+    // Verify nonce (added in the meta box output)
+    if (
+        !isset($_POST['ks_banner_meta_nonce']) ||
+        !wp_verify_nonce($_POST['ks_banner_meta_nonce'], 'ks_save_banner_meta')
+    ) {
+        return;
+    }
+
+    // Correct capability check
+    if (!current_user_can('edit_post', $post_id)) return;
+
+    // Save attachment IDs (comma-separated)
+    if (isset($_POST['post_banner_img'])) {
+        update_post_meta($post_id, 'post_banner_img', sanitize_text_field($_POST['post_banner_img']));
+    }
+
+    // Save URLs (comma-separated)
+    if (isset($_POST['post_banner_img_urls'])) {
+        update_post_meta($post_id, 'post_banner_img_urls', sanitize_text_field($_POST['post_banner_img_urls']));
+    }
 }
