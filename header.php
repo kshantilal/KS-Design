@@ -58,7 +58,7 @@ if( is_front_page() ){
         <div class="container d-flex flex-grow-1">
             <!-- Brand and toggle get grouped for better mobile display -->
             <a class="nav-brand" href="#">
-                <img id="logo" src="<?php echo get_template_directory_uri() . '/public/img/KS_Design.png'?>" alt="">
+                <img id="logo" src="<?php echo get_template_directory_uri() . '/public/img/Design Logo.png'?>" alt="">
             </a>
             <div class="text-right">
                 <button id="nav-icon" class="custom-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
@@ -73,7 +73,7 @@ if( is_front_page() ){
         <div class="container d-flex flex-grow-1">
             <!-- Brand and toggle get grouped for better mobile display -->
             <a class="nav-brand" href="<?php echo esc_url( home_url('/') ); ?>">
-                <img id="logo" src="<?php echo get_template_directory_uri() . '/public/img/KS_Design.png'?>" alt="">
+                <img id="logo" src="<?php echo get_template_directory_uri() . '/public/img/Design Logo.png'?>" alt="">
             </a>
             <div class="text-right">
                 <button id="nav-icon" class="custom-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
